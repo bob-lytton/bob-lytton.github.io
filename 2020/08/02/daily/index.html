@@ -3,15 +3,13 @@
 <a id="more"></a>
 
 <h2 id="20-7-21"><a href="#20-7-21" class="headerlink" title="20/7/21"></a>20/7/21</h2><ul>
-<li><p>有API的尽量用API，不要自己实现</p>
-<ul>
+<li>有API的尽量用API，不要自己实现<ul>
 <li>当然用API的时候也要看清楚API适用的场景，这可能和API内部实现方法有关</li>
 <li>例子：在使用golang给url添加query的时候，建议使用net/url包内的方法，而不要自己手动<code>fmt.Sprintf(&quot;%s?xx=%s&quot;, path, queryValue)</code>这样，因为这里的<code>queryValue</code>需要进行<code>url.QueryEscape</code>处理，而url包内的方法包含了这一处理过程。</li>
 <li>这里蕴含了标准化操作流程的思想，可以减少bug的产生</li>
 </ul>
 </li>
-<li><p>serverless概念：</p>
-<ul>
+<li>serverless概念：<ul>
 <li>serverless不是no server，只是用户注意力不在server上</li>
 <li>serverless = FaaS + BaaS</li>
 <li>FaaS：Function as a Service（函数服务）</li>
@@ -20,13 +18,11 @@
 </li>
 </ul>
 <h2 id="20-7-22"><a href="#20-7-22" class="headerlink" title="20/7/22"></a>20/7/22</h2><ul>
-<li><p>三机房部署</p>
-<ul>
+<li>三机房部署<ul>
 <li>在三个互相联网的机房部署一个服务，可以在一个机房宕机或者一条链路断开时仍然维持正常服务。比双机房稳定性更强</li>
 </ul>
 </li>
-<li><p>开发-发布模式：</p>
-<ul>
+<li>开发-发布模式：<ul>
 <li>分支开发-分支发布</li>
 <li>主干开发-分支发布</li>
 <li>分支开发-主干发布</li>
@@ -34,19 +30,14 @@
 <li>全主干开发（Trunk Based Development）：在remote端不维护分支。这种模式假设提交者提交的代码都是bug-free的，是对开发者的乐观预期。</li>
 </ul>
 </li>
-<li><p>微服务</p>
-</li>
-<li><p>二方包</p>
-</li>
-<li><p>go的包import是直接引用源码</p>
-</li>
-<li><p><a href="https://try.redis.io" target="_blank" rel="noopener">Redis Tutorial</a>学习感想：</p>
-<ul>
+<li>微服务</li>
+<li>二方包</li>
+<li>go的包import是直接引用源码</li>
+<li><a href="https://try.redis.io" target="_blank" rel="noopener">Redis Tutorial</a>学习感想：<ul>
 <li>先学会有哪些操作，然后去了解自己操作的是什么，然后去更深入地了解redis的内部架构</li>
 </ul>
 </li>
-<li><p>Exception的处理：</p>
-<ul>
+<li>Exception的处理：<ul>
 <li>要分析出异常的可能原因，哪些原因下抛出的异常需要服务继续work，哪些是fatal必须要停止服务<ul>
 <li>遭受攻击</li>
 <li>服务器内部出错</li>
@@ -58,24 +49,19 @@
 </li>
 </ul>
 <h2 id="20-7-23"><a href="#20-7-23" class="headerlink" title="20/7/23"></a>20/7/23</h2><ul>
-<li><p>go语言新初始化一个error的方法：</p>
-<ul>
+<li>go语言新初始化一个error的方法：<ul>
 <li><code>errors.New()</code></li>
 <li><code>fmt.Errorf()</code></li>
 <li><code>logrus.Errorf()</code></li>
 <li><code>logrus.WithError(err).Errorf()</code>，其中<code>func (l *Logger) WithError(err error)</code>在logger的一条entry里添加了<code>error</code>的字段</li>
 </ul>
 </li>
-<li><p>关于代码调试，找到一篇不错的blog：<a href="https://blog.codingnow.com/2018/05/ineffective_debugger.html" target="_blank" rel="noopener">https://blog.codingnow.com/2018/05/ineffective_debugger.html</a></p>
-</li>
-<li><p>git pull和git pull rebase</p>
-</li>
+<li>关于代码调试，找到一篇不错的blog：<a href="https://blog.codingnow.com/2018/05/ineffective_debugger.html" target="_blank" rel="noopener">https://blog.codingnow.com/2018/05/ineffective_debugger.html</a></li>
+<li>git pull和git pull rebase</li>
 </ul>
 <h2 id="20-7-26"><a href="#20-7-26" class="headerlink" title="20/7/26"></a>20/7/26</h2><ul>
-<li><p>k8s：kubernetes的简写，一种开源的集群管理系统</p>
-</li>
-<li><p>debug的感想：</p>
-<ul>
+<li>k8s：kubernetes的简写，一种开源的集群管理系统</li>
+<li>debug的感想：<ul>
 <li>多打log<ul>
 <li>leader有一次说过：当你负责某个oncall，而某天半夜被叫起来处理问题的时候，你没办法找其他任何人，但你又要把问题解决。同情一下那个时候的你，现在就多打点log吧</li>
 <li>当然log打太多了也有副作用：占用存储太大。有同事在前公司遇到过打log把服务器打爆的情况</li>
@@ -84,41 +70,31 @@
 <li>对bug有猜想一定要通过log或者复现来证实它</li>
 </ul>
 </li>
-<li><p>开发复杂的程序，一定要先有清晰的架构，并整理成文档</p>
-<ul>
+<li>开发复杂的程序，一定要先有清晰的架构，并整理成文档<ul>
 <li>所以我经常看见有同事画功能分层</li>
 </ul>
 </li>
 </ul>
 <h2 id="20-7-27"><a href="#20-7-27" class="headerlink" title="20/7/27"></a>20/7/27</h2><ul>
-<li><p>提出需求后要进行需求的拆解，接口也要讨论清楚</p>
-</li>
-<li><p>搞清楚应用的场景，以及自己要做什么</p>
-</li>
-<li><p>不能完全依赖运行代码来debug，有时候代码上线非常慢，如果最后只是因为一个个小错误就要不断地重新上线是非常浪费时间的。所以要养成良好的代码习惯，写代码的时候要时刻清醒自己在写什么，不能在熟悉的地方全凭肌肉记忆，复制粘贴的代码一定要仔细检查。</p>
-</li>
-<li><p>ssh进入bash终端后自动执行的是.bash_profile，要想执行.bashrc就要在.bash_profile里面调用</p>
-</li>
-<li><p>别人的代码是个很好的学习途径。（又叫最佳实践，团队里最好收集整理一下）</p>
-</li>
+<li>提出需求后要进行需求的拆解，接口也要讨论清楚</li>
+<li>搞清楚应用的场景，以及自己要做什么</li>
+<li>不能完全依赖运行代码来debug，有时候代码上线非常慢，如果最后只是因为一个个小错误就要不断地重新上线是非常浪费时间的。所以要养成良好的代码习惯，写代码的时候要时刻清醒自己在写什么，不能在熟悉的地方全凭肌肉记忆，复制粘贴的代码一定要仔细检查。</li>
+<li>ssh进入bash终端后自动执行的是.bash_profile，要想执行.bashrc就要在.bash_profile里面调用</li>
+<li>别人的代码是个很好的学习途径。（又叫最佳实践，团队里最好收集整理一下）</li>
 </ul>
 <h2 id="20-7-28"><a href="#20-7-28" class="headerlink" title="20/7/28"></a>20/7/28</h2><ul>
 <li>环境变量在容器里很重要</li>
 <li>代码上线后，测试的时候要弄清楚自己测的是不是新版的代码</li>
 </ul>
 <h2 id="20-7-29"><a href="#20-7-29" class="headerlink" title="20/7/29"></a>20/7/29</h2><ul>
-<li><p>技术债：不良的代码习惯导致的可维护性差的代码段，这种代码在开发中写起来比较简便，上线快，但是后期会成为很大的累赘，就像债务一样，越欠越多，是个隐患。</p>
-</li>
-<li><p>Web编程里重要的调试手段就是直接看web请求抓包，因为API就是web请求本身</p>
-</li>
-<li><p>go的单元测试：</p>
-<ul>
+<li>技术债：不良的代码习惯导致的可维护性差的代码段，这种代码在开发中写起来比较简便，上线快，但是后期会成为很大的累赘，就像债务一样，越欠越多，是个隐患。</li>
+<li>Web编程里重要的调试手段就是直接看web请求抓包，因为API就是web请求本身</li>
+<li>go的单元测试：<ul>
 <li>写法：在同一个包的路径下，写一个<code>*_test.go</code>文件</li>
 <li>用法：在包路径下，运行<code>go test</code>即可，可通过<code>go help test</code>查看更多用法。</li>
 </ul>
 </li>
-<li><p>Web session和Cookie的概念</p>
-</li>
+<li>Web session和Cookie的概念</li>
 </ul>
 <h2 id="20-7-30"><a href="#20-7-30" class="headerlink" title="20/7/30"></a>20/7/30</h2><ul>
 <li>Cookie的SameSite属性</li>
