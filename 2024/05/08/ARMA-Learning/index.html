@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.26.8" theme-name="Stellar" theme-version="1.26.8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
   
   <meta name="generator" content="Hexo 7.1.1">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -14,17 +14,18 @@
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="theme-color" content="#f8f8f8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>ARMA 学习笔记 - 千里之行，始于足下</title>
+  <title>ARMA 学习笔记 - 随便玩玩</title>
 
   
-    <meta name="description" content="参考书：Time Series Analysis and Its Applications, 4-th Edition  基础概念时间序列：一组随机变量按照时间顺序下标得到的序列，被称为时间序列be defined as a collection of random variables indexed according to the order they areobtained in time">
+    <meta name="description" content="参考书：Time Series Analysis and Its Applications, 4-th Edition  基础概念 时间序列：一组随机变量按照时间顺序下标得到的序列，被称为时间序列 be defined as a collection of random variables indexed according to the order they are obtained in t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARMA 学习笔记">
 <meta property="og:url" content="http://bob-lytton.github.io/2024/05/08/ARMA-Learning/index.html">
-<meta property="og:site_name" content="千里之行，始于足下">
-<meta property="og:description" content="参考书：Time Series Analysis and Its Applications, 4-th Edition  基础概念时间序列：一组随机变量按照时间顺序下标得到的序列，被称为时间序列be defined as a collection of random variables indexed according to the order they areobtained in time">
+<meta property="og:site_name" content="随便玩玩">
+<meta property="og:description" content="参考书：Time Series Analysis and Its Applications, 4-th Edition  基础概念 时间序列：一组随机变量按照时间顺序下标得到的序列，被称为时间序列 be defined as a collection of random variables indexed according to the order they are obtained in t">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-08T15:35:15.000Z">
 <meta property="article:modified_time" content="2024-05-08T15:35:15.524Z">
@@ -40,21 +41,20 @@
   <!-- feed -->
   
 
-  <link rel="stylesheet" href="/css/main.css?v=1.26.8">
+  <link rel="stylesheet" href="/css/main.css?v=1.28.1">
 
   
 
   
 
-  
   
 </head>
 <body>
 
-<div class="l_body content tech" id="start" layout="post" ><aside class="l_left"><div class="sidebar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">千里之行，始于足下</div></a></div></header>
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">随便玩玩</div><div class="sub cap">时间是朋友</div></a></div></header>
 
 <div class="nav-area">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
@@ -64,15 +64,8 @@
 </div>
 <div class="widgets">
 
-<widget class="widget-wrapper toc single" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E5%9C%BA%E6%99%AF%E4%B8%8B%E7%9A%84%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90"><span class="toc-text">时序场景下的回归分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EDA"><span class="toc-text">EDA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E6%BB%91%E5%8C%96%EF%BC%88smoothing%EF%BC%89%E6%88%96%E6%BB%A4%E6%B3%A2"><span class="toc-text">平滑化（smoothing）或滤波</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AR%E6%A8%A1%E5%9E%8B"><span class="toc-text">AR模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AR-1-%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%9B%A0%E6%9E%9C%E6%80%A7%EF%BC%88causality%EF%BC%89"><span class="toc-text">AR(1)模型与因果性（causality）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MA%E6%A8%A1%E5%9E%8B"><span class="toc-text">MA模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MA-1-%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%8F%AF%E9%80%86%E6%80%A7%EF%BC%88invertibility%EF%BC%89"><span class="toc-text">MA(1)模型与可逆性（invertibility）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARMA"><span class="toc-text">ARMA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARIMA"><span class="toc-text">ARIMA</span></a></li></ol></div></div></widget>
 
-
-
-
-
-
-
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title active" href="/2024/05/08/ARMA-Learning/"><span class="title">ARMA 学习笔记</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a><a class="item title" href="/2020/08/02/golang-fundamental/"><span class="title">Go语言入门</span></a><a class="item title" href="/2024/02/11/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2020/08/02/intern-daily/"><span class="title">每日心得</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/05/08/ARMA-Learning/"><span class="title">ARMA 学习笔记</span></a><a class="item title" href="/2020/08/02/golang-fundamental/"><span class="title">Go语言入门</span></a><a class="item title" href="/2024/02/11/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2020/08/02/intern-daily/"><span class="title">每日心得</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -83,16 +76,15 @@
 
 <div class="article banner top">
   <div class="content">
-    
-<div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-08T15:35:15.000Z">2024-05-08</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-08T15:35:15.524Z">2024-05-08</time></span></div></div>
-</div>
-
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-08T15:35:15.000Z">2024-05-08</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-08T15:35:15.524Z">2024-05-08</time></span></div></div></div>
     
-    <div class="bottom">
+    <div class="bottom only-title">
+      
       <div class="text-area">
         <h1 class="text title"><span>ARMA 学习笔记</span></h1>
+        
       </div>
     </div>
     
@@ -100,122 +92,246 @@
   </div><article class="md-text content"><blockquote>
 <p>参考书：Time Series Analysis and Its Applications, 4-th Edition</p>
 </blockquote>
-<h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><p>时间序列：一组随机变量按照时间顺序下标得到的序列，被称为时间序列<br>be defined as a collection of random variables indexed according to the order they are<br>obtained in time.</p>
-<p>白噪声：从不相关的随机变量中生成的时间序列被称为白噪声序列<br>The time series generated from uncorrelated variables is used as a model for noise in engineering applications,<br>where it is called white noise</p>
+<h1 id="基础概念">基础概念</h1>
+<p>时间序列：一组随机变量按照时间顺序下标得到的序列，被称为时间序列 be defined as a collection of random variables indexed according to the order they are obtained in time.</p>
+<p>白噪声：从不相关的随机变量中生成的时间序列被称为白噪声序列 The time series generated from uncorrelated variables is used as a model for noise in engineering applications, where it is called white noise</p>
 <p>移动平均过程：对白噪声序列应用移动平均计算获得的时间序列。可以起到filter的效果</p>
 <blockquote>
-<p>differ from the moving average series<br>because one particular kind of oscillatory behavior seems to predominate, producing<br>a sinusoidal type of behavior. A number of methods exist for generating series with<br>this quasi-periodic behavior; we illustrate a popular one based on the autoregressive<br>model<br>有周期性的时序数据不是移动平均过程</p>
+<p>differ from the moving average series because one particular kind of oscillatory behavior seems to predominate, producing a sinusoidal type of behavior. A number of methods exist for generating series with this quasi-periodic behavior; we illustrate a popular one based on the autoregressive model 有周期性的时序数据不是移动平均过程</p>
 </blockquote>
-<p>A complete description of a time series, observed as a collection of n random variables<br>at arbitrary time points $t_1, t_2, . . . , t_n$ , for any positive integer $n$, is provided by the joint<br>distribution function, evaluated as the probability that the values of the series are<br>jointly less than the $n$ constants, $c_1, c_2, . . . , c_n$<br>$$<br>F_{t_1, t_2, …, t_n}(c_1, c_2, …, c_n) &#x3D; \Pr(x_{t_1} \le c_1, x_{t_2} \le c_2, …, x_{t_n} \le c_n)<br>$$<br>Although the joint distribution function describes the data completely, it is an<br><strong>unwieldy</strong> tool for displaying and analyzing time series data. The distribution func-<br>tion (1.8) must be evaluated as a function of n arguments, so any plotting of the<br>corresponding multivariate density functions is virtually impossible.<br>上述完整的概率分布函数只是一个模型，并不能直接使用。更有用的是下面的几个函数</p>
-<p>marginal distribution functions:<br>$$<br>F_t(x) &#x3D; P{x_t \le x}<br>$$<br>marginal density functions:<br>$$<br>f_t(x) &#x3D; \frac{\partial F_t(x)}{\partial x}<br>$$</p>
+<p>A complete description of a time series, observed as a collection of n random variables at arbitrary time points <span class="math inline">\(t_1, t_2, . . . , t_n\)</span> , for any positive integer <span class="math inline">\(n\)</span>, is provided by the joint distribution function, evaluated as the probability that the values of the series are jointly less than the <span class="math inline">\(n\)</span> constants, <span class="math inline">\(c_1, c_2, . . . , c_n\)</span> <span class="math display">\[
+F_{t_1, t_2, ..., t_n}(c_1, c_2, ..., c_n) = \Pr(x_{t_1} \le c_1, x_{t_2} \le c_2, ..., x_{t_n} \le c_n)
+\]</span> Although the joint distribution function describes the data completely, it is an <strong>unwieldy</strong> tool for displaying and analyzing time series data. The distribution func- tion (1.8) must be evaluated as a function of n arguments, so any plotting of the corresponding multivariate density functions is virtually impossible. 上述完整的概率分布函数只是一个模型，并不能直接使用。更有用的是下面的几个函数</p>
+<p>marginal distribution functions: <span class="math display">\[
+F_t(x) = P\{x_t \le x\}
+\]</span> marginal density functions: <span class="math display">\[
+f_t(x) = \frac{\partial F_t(x)}{\partial x}
+\]</span></p>
 <ul>
-<li><p>期望函数（mean function）:<br>$$<br>\mu_{xt} &#x3D; \mathrm{E}(x_t) &#x3D; \int_{-\infty}^{\infty} xf_t(x)\mathrm{d}x<br>$$<br>$x$指随机变量，当只讨论一个时间序列时，通常把$\mu_{xt}$简写作$\mu_t$</p>
-</li>
-<li><p>自协方差函数（autocovariance function）:<br>$$<br>\gamma_x(s, t) &#x3D; \mathrm{cov}(x_s, x_t) &#x3D; \mathrm{E}[(x_s - \mu_s)(x_t - \mu_t)]<br>$$<br>其中$s$和$t$是下标，$x$是随机变量，只讨论一个时间序列时可简写为$\gamma(s, t)$。注意自协方差有性质$\gamma(s, t) &#x3D; \gamma(t, s)$<br>自协方差衡量同一时间序列中不同时间两点的线性相关性。平滑的序列，其自协方差会很大；不平滑的序列中，当$s$和$t$相隔很远时，自协方差会接近0。<br>当自协方差$\gamma(s, t) &#x3D; 0$时，$x_s$和$x_t$线性不相关，但仍然有可能有其他的相关性结构。<br>当$s &#x3D; t$时，自协方差退化为方差$\gamma(t, t) &#x3D; \mathrm{var}(x_t)$</p>
-</li>
-<li><p>性质：线性组合的协方差<br>对于两组随机变量${X_j}$和${Y_k}$，令$U &#x3D; \sum_{j&#x3D;1}^m a_jX_j$，$V&#x3D;\sum_{k&#x3D;1}^r b_kY_k$，则有<br>$$<br>\mathrm{cov}(U, V) &#x3D; \sum_{j&#x3D;1}^m\sum_{k&#x3D;1}^r a_jb_k\mathrm{cov}(X_j,Y_k)\<br>\mathrm{var}(U) &#x3D; \mathrm{cov}(U,U)<br>$$<br>该公式在后面会有广泛应用。</p>
-</li>
+<li><p>期望函数（mean function）: <span class="math display">\[
+\mu_{xt} = \mathrm{E}(x_t) = \int_{-\infty}^{\infty} xf_t(x)\mathrm{d}x
+\]</span> <span class="math inline">\(x\)</span>指随机变量，当只讨论一个时间序列时，通常把<span class="math inline">\(\mu_{xt}\)</span>简写作<span class="math inline">\(\mu_t\)</span></p></li>
+<li><p>自协方差函数（autocovariance function）: <span class="math display">\[
+\gamma_x(s, t) = \mathrm{cov}(x_s, x_t) = \mathrm{E}[(x_s - \mu_s)(x_t - \mu_t)]
+\]</span> 其中<span class="math inline">\(s\)</span>和<span class="math inline">\(t\)</span>是下标，<span class="math inline">\(x\)</span>是随机变量，只讨论一个时间序列时可简写为<span class="math inline">\(\gamma(s, t)\)</span>。注意自协方差有性质<span class="math inline">\(\gamma(s, t) = \gamma(t, s)\)</span> 自协方差衡量同一时间序列中不同时间两点的线性相关性。平滑的序列，其自协方差会很大；不平滑的序列中，当<span class="math inline">\(s\)</span>和<span class="math inline">\(t\)</span>相隔很远时，自协方差会接近0。 当自协方差<span class="math inline">\(\gamma(s, t) = 0\)</span>时，<span class="math inline">\(x_s\)</span>和<span class="math inline">\(x_t\)</span>线性不相关，但仍然有可能有其他的相关性结构。 当<span class="math inline">\(s = t\)</span>时，自协方差退化为方差<span class="math inline">\(\gamma(t, t) = \mathrm{var}(x_t)\)</span></p></li>
+<li><p>性质：线性组合的协方差 对于两组随机变量<span class="math inline">\(\{X_j\}\)</span>和<span class="math inline">\(\{Y_k\}\)</span>，令<span class="math inline">\(U = \sum_{j=1}^m a_jX_j\)</span>，<span class="math inline">\(V=\sum_{k=1}^r b_kY_k\)</span>，则有 <span class="math display">\[
+\mathrm{cov}(U, V) = \sum_{j=1}^m\sum_{k=1}^r a_jb_k\mathrm{cov}(X_j,Y_k)\\
+\mathrm{var}(U) = \mathrm{cov}(U,U)
+\]</span> 该公式在后面会有广泛应用。</p></li>
 </ul>
-<p>例子：MA的自协方差<br>以MA模型<br>$$<br>v_t &#x3D; \frac{1}{3}(w_{t-1}+w_t+w_{t+1})<br>$$<br>为例，其自协方差为<br>$$<br>\begin{align*}<br>\gamma(s, t)<br>&amp;&#x3D;  \mathrm{cov}(v_s, v_t) \<br>&amp;&#x3D;  \left{ \begin{array}{ll}<br>            \frac{3}{9}\sigma_w^2 &amp; s &#x3D; t, \<br>            \frac{2}{9}\sigma_w^2 &amp; |s-t|&#x3D;1, \<br>            \frac{1}{9}\sigma_w^2 &amp; |s-t|&#x3D;2, \<br>            0 &amp; |s-t| &gt; 2<br>    \end{array}<br>    \right.<br>\end{align*}<br>$$<br>This particular autocovariance is interesting because it <strong>only depends on the time separation or lag</strong> and not on the absolute location of the points along the series.<br>We shall see later that this dependence suggests a mathematical model for the concept<br>of <strong>weak stationarity</strong>.</p>
+<p>例子：MA的自协方差 以MA模型 <span class="math display">\[
+v_t = \frac{1}{3}(w_{t-1}+w_t+w_{t+1})
+\]</span> 为例，其自协方差为 <span class="math display">\[
+\begin{align*}
+\gamma(s, t) 
+&amp;=  \mathrm{cov}(v_s, v_t) \\
+&amp;=  \left\{ \begin{array}{ll}
+            \frac{3}{9}\sigma_w^2 &amp; s = t, \\
+            \frac{2}{9}\sigma_w^2 &amp; |s-t|=1, \\
+            \frac{1}{9}\sigma_w^2 &amp; |s-t|=2, \\
+            0 &amp; |s-t| &gt; 2
+    \end{array}
+    \right.
+\end{align*} 
+\]</span> This particular autocovariance is interesting because it <strong>only depends on the time separation or lag</strong> and not on the absolute location of the points along the series. We shall see later that this dependence suggests a mathematical model for the concept of <strong>weak stationarity</strong>.</p>
 <ul>
-<li><p>自相关函数（autocorrelation function, ACF）<br>$$<br>\rho(s, t) &#x3D; \frac{\gamma(s, t)}{\sqrt{\gamma(s, s)\gamma(t, t)}}<br>$$<br>The ACF measures the linear predictability of the series at time $t$, say $x_t$ , using only<br>the value $x_s$.</p>
-</li>
-<li><p>强稳定性（strictly stationary）<br>$$<br>\Pr{x_{t_1}\le c_1, …, x_{t_k}\le c_k} &#x3D;<br>\Pr{x_{t_1+h}\le c_1, …, x_{t_k+h}\le c_k}<br>$$<br>对所有的$k$，$t_1, t_2, …, t_k$，$c_1, c_2, …, c_k$和$h$都成立。<br>严格稳定的时间序列的任何一段数据点的概率行为和将这一段在时间上平移$h$个单位后的数据点的概率行为相同</p>
-</li>
+<li><p>自相关函数（autocorrelation function, ACF） <span class="math display">\[
+\rho(s, t) = \frac{\gamma(s, t)}{\sqrt{\gamma(s, s)\gamma(t, t)}}
+\]</span> The ACF measures the linear predictability of the series at time <span class="math inline">\(t\)</span>, say <span class="math inline">\(x_t\)</span> , using only the value <span class="math inline">\(x_s\)</span>.</p></li>
+<li><p>强稳定性（strictly stationary） <span class="math display">\[
+\Pr\{x_{t_1}\le c_1, ..., x_{t_k}\le c_k\} =
+\Pr\{x_{t_1+h}\le c_1, ..., x_{t_k+h}\le c_k\}
+\]</span> 对所有的<span class="math inline">\(k\)</span>，<span class="math inline">\(t_1, t_2, ..., t_k\)</span>，<span class="math inline">\(c_1, c_2, ..., c_k\)</span>和<span class="math inline">\(h\)</span>都成立。 严格稳定的时间序列的任何一段数据点的概率行为和将这一段在时间上平移<span class="math inline">\(h\)</span>个单位后的数据点的概率行为相同</p></li>
 </ul>
-<p>推论1：强稳定的时间序列，当$k&#x3D;1$时，上式变成<br>$$<br>\Pr{x_s \le c}&#x3D;\Pr{x_t \le c}<br>$$<br>因而，其均值$\mu_t &#x3D; \mu_s$对任意$s, t$都成立，进而$\mu_t$<strong>是常数</strong></p>
-<p>推论2：当$k&#x3D;2$时，上式可变为<br>$$<br>\Pr{x_s\le c_1, x_t\le c_2}&#x3D;\Pr{x_{s+h}\le c_1, x_{t+h}\le c_2}<br>$$<br>进而当该时序过程存在方差时，其自协方差满足<br>$$<br>\gamma(s, t) &#x3D; \gamma(s+h, t+h)<br>$$<br>即自协方差只取决于$s$到$t$的距离。</p>
+<p>推论1：强稳定的时间序列，当<span class="math inline">\(k=1\)</span>时，上式变成 <span class="math display">\[
+\Pr\{x_s \le c\}=\Pr\{x_t \le c\}
+\]</span> 因而，其均值<span class="math inline">\(\mu_t = \mu_s\)</span>对任意<span class="math inline">\(s, t\)</span>都成立，进而<span class="math inline">\(\mu_t\)</span><strong>是常数</strong></p>
+<p>推论2：当<span class="math inline">\(k=2\)</span>时，上式可变为 <span class="math display">\[
+\Pr\{x_s\le c_1, x_t\le c_2\}=\Pr\{x_{s+h}\le c_1, x_{t+h}\le c_2\}
+\]</span> 进而当该时序过程存在方差时，其自协方差满足 <span class="math display">\[
+\gamma(s, t) = \gamma(s+h, t+h)
+\]</span> 即自协方差只取决于<span class="math inline">\(s\)</span>到<span class="math inline">\(t\)</span>的距离。</p>
 <p>强稳定性的定义太强而在实际数据分析中不实用，只是作为一个理论模型而存在。</p>
 <ul>
 <li>弱稳定性（weak stationarity）</li>
 </ul>
 <p>满足强稳定性定义中的推论1（均值为常数）和推论2（自协方差只依赖于时间点之差）的性质的时间序列，被称为弱稳定的时间序列。通常称「稳定的」即是指弱稳定性。</p>
-<p>在弱稳定时间序列中，均值为常数因此可写为$\mu_t &#x3D; \mu$，<br>自协方差可转写为只与时间差相关<br>$$<br>\gamma(t+h, t) &#x3D; \mathrm{cov}(x_{t+h}, x_t) &#x3D; \mathrm{cov}(x_h, x_0) &#x3D; \gamma(h, 0)<br>$$<br>ACF则可以改写为<br>$$<br>\rho(h) &#x3D; \frac{\gamma(t+h, t)}{\sqrt{\gamma(t+h, t+h)\gamma(t, t)}} &#x3D; \frac{\gamma(h)}{\gamma(0)}<br>$$</p>
+<p>在弱稳定时间序列中，均值为常数因此可写为<span class="math inline">\(\mu_t = \mu\)</span>，<br />
+自协方差可转写为只与时间差相关 <span class="math display">\[
+\gamma(t+h, t) = \mathrm{cov}(x_{t+h}, x_t) = \mathrm{cov}(x_h, x_0) = \gamma(h, 0)
+\]</span> ACF则可以改写为 <span class="math display">\[
+\rho(h) = \frac{\gamma(t+h, t)}{\sqrt{\gamma(t+h, t+h)\gamma(t, t)}} = \frac{\gamma(h)}{\gamma(0)}
+\]</span></p>
 <ul>
 <li>趋势稳定性（trend stationarity）</li>
 </ul>
-<p>例如$x_t &#x3D; \alpha + \beta t + y_t$，其中$y_t$是弱稳定的时间序列，则$\mu_{xt} &#x3D; \alpha + \beta t + \mu_y$，不是与时间无关的常数，但其自协方差$\gamma_x(h) &#x3D; \mathrm{cov}(x_{t+h}, x_t) &#x3D; \mathrm{E}[(x_{t+h}-\mu_{x,t+h})(x_t - \mu_{x,t})] &#x3D; \mathrm{E}[(y_{t+h}-\mu_y)(y_t-\mu_y)] &#x3D; \gamma_y(h)$，因此该时序模型被认为是在线性趋势下有稳定性的，这种稳定性被称为趋势稳定性。</p>
-<p>对于稳定序列，其自协方差是偶函数。即<br>$$<br>\gamma(h) &#x3D; \gamma((t+h)-t) &#x3D; \mathrm{cov}(x_{t+h}, x_t) &#x3D; \mathrm{cov}(x_t, x_{t+h}) &#x3D; \gamma(t - (t+h)) &#x3D; \gamma(-h)<br>$$<br>显然，这是因为$\mathrm{cov}$中的两个参数是可以交换的，而稳定序列中自协方差只和两点的时间距离有关</p>
+<p>例如<span class="math inline">\(x_t = \alpha + \beta t + y_t\)</span>，其中<span class="math inline">\(y_t\)</span>是弱稳定的时间序列，则<span class="math inline">\(\mu_{xt} = \alpha + \beta t + \mu_y\)</span>，不是与时间无关的常数，但其自协方差<span class="math inline">\(\gamma_x(h) = \mathrm{cov}(x_{t+h}, x_t) = \mathrm{E}[(x_{t+h}-\mu_{x,t+h})(x_t - \mu_{x,t})] = \mathrm{E}[(y_{t+h}-\mu_y)(y_t-\mu_y)] = \gamma_y(h)\)</span>，因此该时序模型被认为是在线性趋势下有稳定性的，这种稳定性被称为趋势稳定性。</p>
+<p>对于稳定序列，其自协方差是偶函数。即 <span class="math display">\[
+\gamma(h) = \gamma((t+h)-t) = \mathrm{cov}(x_{t+h}, x_t) = \mathrm{cov}(x_t, x_{t+h}) = \gamma(t - (t+h)) = \gamma(-h)
+\]</span> 显然，这是因为<span class="math inline">\(\mathrm{cov}\)</span>中的两个参数是可以交换的，而稳定序列中自协方差只和两点的时间距离有关</p>
 <p>估计（estimation）一般指通过采样数据计算统计指标。</p>
 <ul>
-<li><p>样本自协方差（sample autocovariance function）<br>$$<br>\hat\gamma(h) &#x3D; \frac{1}{n}\sum_{t&#x3D;1}^{n-h}(x_{t+h}-\bar x)(x_t - \bar x)<br>$$<br>其中$\bar x$是样本均值，$h$是两个样本点的间隔</p>
-</li>
-<li><p>样本自相关函数（sample autocorrelation function）<br>$$<br>\hat\rho(h) &#x3D; \frac{\hat\gamma(h)}{\hat\gamma(0)}<br>$$<br>性质：样本量足够大时，如果时间序列$x_t$是白噪声序列，则样本ACF，即$\hat\rho_x(h), h&#x3D;1,2,…,H$，其中$H$是任意的但固定值，基本服从$N(0, \frac{1}{n})$的正态分布。<br>Based on the previous result, we obtain a rough method of assessing whether peaks<br>in $\hat\rho(h)$ are significant by determining whether the observed peak is outside the interval<br>$\pm2&#x2F;\sqrt n$ (or plus&#x2F;minus two standard errors), for a white noise sequence, approximately<br>$95%$ of the sample ACFs should be within these limits.</p>
-</li>
+<li><p>样本自协方差（sample autocovariance function） <span class="math display">\[
+\hat\gamma(h) = \frac{1}{n}\sum_{t=1}^{n-h}(x_{t+h}-\bar x)(x_t - \bar x)
+\]</span> 其中<span class="math inline">\(\bar x\)</span>是样本均值，<span class="math inline">\(h\)</span>是两个样本点的间隔</p></li>
+<li><p>样本自相关函数（sample autocorrelation function） <span class="math display">\[
+\hat\rho(h) = \frac{\hat\gamma(h)}{\hat\gamma(0)}
+\]</span> 性质：样本量足够大时，如果时间序列<span class="math inline">\(x_t\)</span>是白噪声序列，则样本ACF，即<span class="math inline">\(\hat\rho_x(h), h=1,2,...,H\)</span>，其中<span class="math inline">\(H\)</span>是任意的但固定值，基本服从<span class="math inline">\(N(0, \frac{1}{n})\)</span>的正态分布。 Based on the previous result, we obtain a rough method of assessing whether peaks in <span class="math inline">\(\hat\rho(h)\)</span> are significant by determining whether the observed peak is outside the interval <span class="math inline">\(\pm2/\sqrt n\)</span> (or plus/minus two standard errors), for a white noise sequence, approximately <span class="math inline">\(95\%\)</span> of the sample ACFs should be within these limits.</p></li>
 </ul>
-<h1 id="时序回归和EDA分析技巧"><a href="#时序回归和EDA分析技巧" class="headerlink" title="时序回归和EDA分析技巧"></a>时序回归和EDA分析技巧</h1><p>EDA：Exploratory Data Analysis，探索性数据分析。用于初步分析数据集的统计特性，以寻找进一步分析方向或进行可视化。</p>
-<h2 id="时序场景下的回归分析"><a href="#时序场景下的回归分析" class="headerlink" title="时序场景下的回归分析"></a>时序场景下的回归分析</h2><p>$$<br>x_t &#x3D; \beta_0 + \beta_1 z_{t_1} + … + \beta_q z_{t_q} + w_t, w_t \sim wn(0, \sigma_w^2)<br>$$<br>上述式子的实际应用中，$w_t$实际上是误差项。上式同时包含了一个对误差项属于白噪声分布的前提假设。</p>
+<h1 id="时序回归和eda分析技巧">时序回归和EDA分析技巧</h1>
+<p>EDA：Exploratory Data Analysis，探索性数据分析。用于初步分析数据集的统计特性，以寻找进一步分析方向或进行可视化。</p>
+<h2 id="时序场景下的回归分析">时序场景下的回归分析</h2>
+<p><span class="math display">\[
+x_t = \beta_0 + \beta_1 z_{t_1} + ... + \beta_q z_{t_q} + w_t, w_t \sim wn(0, \sigma_w^2)
+\]</span> 上述式子的实际应用中，<span class="math inline">\(w_t\)</span>实际上是误差项。上式同时包含了一个对误差项属于白噪声分布的前提假设。 - OLS (ordinary least square) - SSE (error sum of squares), SSR (regression sum of squares) - MSE (mean squared error) - <span class="math inline">\(F\)</span>-statistics - <span class="math inline">\(R^2\)</span> (coefficient of determination) - AIC, AICc - BIC (a.k.a SIC)</p>
+<h2 id="eda">EDA</h2>
+<p>真实数据集很可能不满足稳定性，而存在一些趋势。如何处理以构造稳定性？ <span class="math display">\[
+x_t = \mu_t + y_t
+\]</span> 其中<span class="math inline">\(x_t\)</span>是观测集（即真实数据集），<span class="math inline">\(\mu_t\)</span>表示趋势，<span class="math inline">\(y_t\)</span>是一个稳定过程。强趋势往往可能使得<span class="math inline">\(y_t\)</span>被隐藏起来，因此EDA的第一步通常是移除观测集中的趋势项，得到残差序列（这个操作被称为detrending） <span class="math display">\[
+\hat y_t = x_t - \hat\mu_t
+\]</span> 在这里，<span class="math inline">\(\mu_t\)</span>可以是前述线性回归得到的序列，也可以是其他有趋势性的随机过程建模的序列（比如漂移随机游走 random walk with drift）</p>
+<p>使用随机游走过程对<span class="math inline">\(\mu_t\)</span>建模，即 <span class="math display">\[
+\mu_t = \delta + \mu_{t-1} + w_t
+\]</span> 则可对<span class="math inline">\(x_t\)</span>做差分，得到 <span class="math display">\[
+\begin{align*}
+x_t - x_{t-1} &amp;= (\mu_t + y_t) - (\mu_{t-1} + y_{t-1}) \\
+&amp;=\delta + w_t + y_t - y_{t-1}
+\end{align*}
+\]</span> 令<span class="math inline">\(z_t = y_t - y_{t-1}\)</span>，则得到的序列<span class="math inline">\(z_t\)</span>也是稳定序列，因为其均值为常数<span class="math inline">\(0\)</span>，且其自协方差只与延迟（lag）相关 <span class="math display">\[
+\begin{align*}
+\gamma_z(h) &amp;= \mathrm{cov}(z_{t+h}, z_t) = \mathrm{cov}(y_{t+h}-y_{t+h-1}, y_t-y_{t-1}) \\
+&amp;= 2\gamma_y(h) - \gamma_y(h+1) - \gamma_y(h-1)
+\end{align*}
+\]</span> 实际上，类似地也可以证明<span class="math inline">\(x_t - x_{t-1}\)</span>也是稳定序列，这就是<strong>差分序列</strong>。</p>
+<p>差分（differencing）相比去趋势（detrending）有一项优势，就是差分中没有需要估计的参数。同样也有一项劣势，即无法对前文设定的稳定序列<span class="math inline">\(y_t\)</span>作出估计。当估计<span class="math inline">\(y_t\)</span>很重要时，detrending可能是更合适的办法；而当目标只是为了调整数据获得稳定序列时，差分会更好用一些。</p>
+<p>Differencing plays a central role in time series analysis. 差分在时间序列分析中有很重要的地位。一阶差分的符号表示为 <span class="math display">\[
+\nabla x_t = x_t - x_{t-1}
+\]</span> 一阶差分可以消除线性趋势，类似的，二阶差分可以消除二次趋势（quadratic trend）<br />
+p.s. 二次的 quadratic，四次的 quartic</p>
 <ul>
-<li>OLS (ordinary least square)</li>
-<li>SSE (error sum of squares), SSR (regression sum of squares)</li>
-<li>MSE (mean squared error)</li>
-<li>$F$-statistics</li>
-<li>$R^2$ (coefficient of determination)</li>
-<li>AIC, AICc</li>
-<li>BIC (a.k.a SIC)</li>
+<li><p>后移算子（backshift operator） <span class="math display">\[
+Bx_t = x_{t-1}
+\]</span> 其中<span class="math inline">\(B\)</span>为后移算子（也有用<span class="math inline">\(L\)</span>来指代滞后算子lag operator的，效果相同）。 <span class="math display">\[
+B^k x_t = x_{t-k}\\
+B^{-1}x_{t-1} = x_t
+\]</span> 即<span class="math inline">\(B^{-1}\)</span>为前移算子（forward-shift operator）</p></li>
+<li><p><span class="math inline">\(d\)</span>阶差分算子 <span class="math display">\[
+\nabla^d = (1-B)^d
+\]</span> 使用后移算子可以简便描述<span class="math inline">\(d\)</span>阶差分算子。<span class="math inline">\(d\)</span>阶差分即 <span class="math display">\[
+\begin{align*}
+\nabla^d x_t &amp;= (1-B)^d x_t \\
+&amp;= x_t - \binom{d}{1}Bx_t + \binom{d}{2}B^2x_t -... + (-1)^dB^dx_t
+\end{align*}
+\]</span></p></li>
 </ul>
-<h2 id="EDA"><a href="#EDA" class="headerlink" title="EDA"></a>EDA</h2><p>真实数据集很可能不满足稳定性，而存在一些趋势。如何处理以构造稳定性？<br>$$<br>x_t &#x3D; \mu_t + y_t<br>$$<br>其中$x_t$是观测集（即真实数据集），$\mu_t$表示趋势，$y_t$是一个稳定过程。强趋势往往可能使得$y_t$被隐藏起来，因此EDA的第一步通常是移除观测集中的趋势项，得到残差序列（这个操作被称为detrending）<br>$$<br>\hat y_t &#x3D; x_t - \hat\mu_t<br>$$<br>在这里，$\mu_t$可以是前述线性回归得到的序列，也可以是其他有趋势性的随机过程建模的序列（比如漂移随机游走 random walk with drift）</p>
-<p>使用随机游走过程对$\mu_t$建模，即<br>$$<br>\mu_t &#x3D; \delta + \mu_{t-1} + w_t<br>$$<br>则可对$x_t$做差分，得到<br>$$<br>\begin{align*}<br>x_t - x_{t-1} &amp;&#x3D; (\mu_t + y_t) - (\mu_{t-1} + y_{t-1}) \<br>&amp;&#x3D;\delta + w_t + y_t - y_{t-1}<br>\end{align*}<br>$$<br>令$z_t &#x3D; y_t - y_{t-1}$，则得到的序列$z_t$也是稳定序列，因为其均值为常数$0$，且其自协方差只与延迟（lag）相关<br>$$<br>\begin{align*}<br>\gamma_z(h) &amp;&#x3D; \mathrm{cov}(z_{t+h}, z_t) &#x3D; \mathrm{cov}(y_{t+h}-y_{t+h-1}, y_t-y_{t-1}) \<br>&amp;&#x3D; 2\gamma_y(h) - \gamma_y(h+1) - \gamma_y(h-1)<br>\end{align*}<br>$$<br>实际上，类似地也可以证明$x_t - x_{t-1}$也是稳定序列，这就是<strong>差分序列</strong>。</p>
-<p>差分（differencing）相比去趋势（detrending）有一项优势，就是差分中没有需要估计的参数。同样也有一项劣势，即无法对前文设定的稳定序列$y_t$作出估计。当估计$y_t$很重要时，detrending可能是更合适的办法；而当目标只是为了调整数据获得稳定序列时，差分会更好用一些。</p>
-<p>Differencing plays a central role in time series analysis. 差分在时间序列分析中有很重要的地位。一阶差分的符号表示为<br>$$<br>\nabla x_t &#x3D; x_t - x_{t-1}<br>$$<br>一阶差分可以消除线性趋势，类似的，二阶差分可以消除二次趋势（quadratic trend）<br>p.s. 二次的 quadratic，四次的 quartic</p>
-<ul>
-<li><p>后移算子（backshift operator）<br>$$<br>Bx_t &#x3D; x_{t-1}<br>$$<br>其中$B$为后移算子（也有用$L$来指代滞后算子lag operator的，效果相同）。<br>$$<br>B^k x_t &#x3D; x_{t-k}\<br>B^{-1}x_{t-1} &#x3D; x_t<br>$$<br>即$B^{-1}$为前移算子（forward-shift operator）</p>
-</li>
-<li><p>$d$阶差分算子<br>$$<br>\nabla^d &#x3D; (1-B)^d<br>$$<br>使用后移算子可以简便描述$d$阶差分算子。$d$阶差分即<br>$$<br>\begin{align*}<br>\nabla^d x_t &amp;&#x3D; (1-B)^d x_t \<br>&amp;&#x3D; x_t - \binom{d}{1}Bx_t + \binom{d}{2}B^2x_t -… + (-1)^dB^dx_t<br>\end{align*}<br>$$</p>
-</li>
-</ul>
-<h2 id="平滑化（smoothing）或滤波"><a href="#平滑化（smoothing）或滤波" class="headerlink" title="平滑化（smoothing）或滤波"></a>平滑化（smoothing）或滤波</h2><p>例子</p>
-<ul>
-<li>moving average smoother</li>
-<li>kernel smoothing</li>
-<li>Lowess</li>
-<li>Smoothing splines</li>
-<li>smoothing one series as a function of another</li>
-</ul>
-<h1 id="ARIMA模型"><a href="#ARIMA模型" class="headerlink" title="ARIMA模型"></a>ARIMA模型</h1><p>Idea:</p>
-<p>Classical regression is often insufficient for explaining<br>all of the interesting dynamics of a time series.<br>Instead, the introduction of correlation that may be<br>generated through lagged linear relations leads to<br>proposing the autoregressive<br>(AR) and autoregressive moving average (ARMA) models.<br>Adding nonstationary models to the mix leads to the<br>autoregressive integrated moving average (ARIMA) model.</p>
+<h2 id="平滑化smoothing或滤波">平滑化（smoothing）或滤波</h2>
+<p>例子 - moving average smoother - kernel smoothing - Lowess - Smoothing splines - smoothing one series as a function of another</p>
+<h1 id="arima模型">ARIMA模型</h1>
+<p>Idea:</p>
+<p>Classical regression is often insufficient for explaining all of the interesting dynamics of a time series. Instead, the introduction of correlation that may be generated through lagged linear relations leads to proposing the autoregressive (AR) and autoregressive moving average (ARMA) models. Adding nonstationary models to the mix leads to the autoregressive integrated moving average (ARIMA) model.</p>
 <p>关键点：parameter estimation, forecasting</p>
-<h2 id="AR模型"><a href="#AR模型" class="headerlink" title="AR模型"></a>AR模型</h2><ul>
+<h2 id="ar模型">AR模型</h2>
+<ul>
 <li>经典回归模型 vs 自回归模型</li>
 </ul>
-<p>经典回归模型建立在「静态」场景上，只让因变量被独立变量的当前值所影响。<br>在时间序列场景下，人们需要让因变量受到独立变量的过去值乃至因变量自身的过去值的影响。而如果当前状态可以完全由独立变量的过去值建模的话，就可以进行<strong>预测</strong>了。</p>
+<p>经典回归模型建立在「静态」场景上，只让因变量被独立变量的当前值所影响。 在时间序列场景下，人们需要让因变量受到独立变量的过去值乃至因变量自身的过去值的影响。而如果当前状态可以完全由独立变量的过去值建模的话，就可以进行<strong>预测</strong>了。</p>
 <ul>
-<li>定义：自回归模型（autoregressive model）<br>$$<br>x_t &#x3D; \phi_1 x_{t-1} + \phi_2 x_{t-2} + … + \phi_p x_{t-p} + w_t<br>$$<br>是$p$阶自回归模型，简写做$\mathrm{AR}(p)$。其中$w_t \sim wn(0, \sigma_w^2)$是白噪声项，$\phi_1, \phi_2, …, \phi_p$是常数，且$\phi_p \ne 0$。<br>在AR模型中，$x_t$是稳定的，且可以认为均值为0。如果其均值$\mu$不为0，则将$x_t$用$x_t - \mu$来替代，得到<br>$$<br>x_t - \mu &#x3D; \phi_1(x_{t-1}-\mu) + … + \phi_p(x_{t-p} - \mu) + w_t<br>$$<br>上式等价于<br>$$<br>x_t &#x3D; \alpha + \phi_1 x_{t-1} + \phi_2 x_{t-2} + … + \phi_p x_{t-p} + w_t,\<br>where\ \alpha &#x3D; \mu(1-\phi_1 - … - \phi_p)<br>$$<br>这就是常见的另外一种AR模型的定义式。</li>
+<li>定义：自回归模型（autoregressive model） <span class="math display">\[
+x_t = \phi_1 x_{t-1} + \phi_2 x_{t-2} + ... + \phi_p x_{t-p} + w_t
+\]</span> 是<span class="math inline">\(p\)</span>阶自回归模型，简写做<span class="math inline">\(\mathrm{AR}(p)\)</span>。其中<span class="math inline">\(w_t \sim wn(0, \sigma_w^2)\)</span>是白噪声项，<span class="math inline">\(\phi_1, \phi_2, ..., \phi_p\)</span>是常数，且<span class="math inline">\(\phi_p \ne 0\)</span>。 在AR模型中，<span class="math inline">\(x_t\)</span>是稳定的，且可以认为均值为0。如果其均值<span class="math inline">\(\mu\)</span>不为0，则将<span class="math inline">\(x_t\)</span>用<span class="math inline">\(x_t - \mu\)</span>来替代，得到 <span class="math display">\[
+x_t - \mu = \phi_1(x_{t-1}-\mu) + ... + \phi_p(x_{t-p} - \mu) + w_t
+\]</span> 上式等价于 <span class="math display">\[
+x_t = \alpha + \phi_1 x_{t-1} + \phi_2 x_{t-2} + ... + \phi_p x_{t-p} + w_t,\\
+where\ \alpha = \mu(1-\phi_1 - ... - \phi_p)
+\]</span> 这就是常见的另外一种AR模型的定义式。</li>
 </ul>
-<p>对自回归模型的定义式应用后移算子并稍作变形，得到下式<br>$$<br>(1-\phi_1 B - \phi_2 B^2 - … - \phi_p B^p)x_t &#x3D; w_t<br>$$<br>实际应用模型时，需要首先解出$\phi_1, \phi_2, …, \phi_p$，上式对此有重要意义。为此有如下定义：</p>
+<p>对自回归模型的定义式应用后移算子并稍作变形，得到下式 <span class="math display">\[
+(1-\phi_1 B - \phi_2 B^2 - ... - \phi_p B^p)x_t = w_t
+\]</span> 实际应用模型时，需要首先解出<span class="math inline">\(\phi_1, \phi_2, ..., \phi_p\)</span>，上式对此有重要意义。为此有如下定义：</p>
 <ul>
-<li>定义：自回归算子（autoregressive operator）<br>$$<br>\phi(B) &#x3D; 1-\phi_1 B - \phi_2 B^2 - … - \phi_p B^p<br>$$<br>为自回归算子。则AR模型可重新写成$\phi(B)x_t &#x3D; w_t$.</li>
+<li>定义：自回归算子（autoregressive operator） <span class="math display">\[
+\phi(B) = 1-\phi_1 B - \phi_2 B^2 - ... - \phi_p B^p
+\]</span> 为自回归算子。则AR模型可重新写成<span class="math inline">\(\phi(B)x_t = w_t\)</span>.</li>
 </ul>
-<h3 id="AR-1-模型与因果性（causality）"><a href="#AR-1-模型与因果性（causality）" class="headerlink" title="AR(1)模型与因果性（causality）"></a>AR(1)模型与因果性（causality）</h3><p>考虑AR(1)模型如下<br>$$<br>x_t &#x3D; \phi x_{t-1} + w_t<br>$$<br>迭代计算可得<br>$$<br>\begin{align*}<br>x_t &amp;&#x3D; \phi x_{t-1} + w_t \<br>    &amp;&#x3D; \phi (\phi x_{t-2} + w_{t-1}) + w_t \<br>    &amp;&#x3D; \phi^2 x_{t-2} + \phi w_{t-1} + w_t \<br>    &amp;&#x3D;… \<br>    &amp;&#x3D; \phi^k x_{t-k} + \sum_{i&#x3D;0}^{k-1}\phi^i w_{t-i}<br>\end{align*}<br>$$</p>
+<h3 id="ar1模型与因果性causality">AR(1)模型与因果性（causality）</h3>
+<p>考虑AR(1)模型如下 <span class="math display">\[
+x_t = \phi x_{t-1} + w_t
+\]</span> 迭代计算可得 <span class="math display">\[
+\begin{align*}
+x_t &amp;= \phi x_{t-1} + w_t \\
+    &amp;= \phi (\phi x_{t-2} + w_{t-1}) + w_t \\
+    &amp;= \phi^2 x_{t-2} + \phi w_{t-1} + w_t \\
+    &amp;=... \\
+    &amp;= \phi^k x_{t-k} + \sum_{i=0}^{k-1}\phi^i w_{t-i}
+\end{align*}
+\]</span> - 当<span class="math inline">\(|\phi| &lt; 1\)</span>时，由于 <span class="math display">\[
+\lim_{k\to\infty}\mathrm{E}\left(x_t-\sum_{j=0}^{k-1}\phi^jw_{t-j}\right)^2 = \lim_{k\to\infty}\phi^{2k}\mathrm{E}(x_{t-k}^2) = 0
+\]</span> 故可以无限迭代上式，得到 <span class="math display">\[
+x_t = \sum_{i=0}^\infty \phi^i w_{t-i}
+\]</span> 均方收敛。其均值为 <span class="math display">\[
+\mu = \mathrm{E}(x_t) = \sum_{i=0}^\infty \phi^i\mathrm{E}(w_{t-i}) = 0
+\]</span> 自协方差为 <span class="math display">\[
+\begin{align*}
+\gamma(h) &amp;= \mathrm{cov}(x_{t+h}, x_t) = \mathrm{cov}\left[\left(\sum_{i=0}^\infty \phi^iw_{t+h-i}\right), \left(\sum_{j=0}^\infty\phi^j w_{t-j}\right)\right] \\
+&amp;= \underbrace{\sum_{i=0}^{h-1}\sum_{j=0}^\infty \phi^i \phi^j\mathrm{cov}(w_{t+h-i}, w_{t-j})}_{=0} + 
+\underbrace{\sum_{i=h}^\infty\sum_{j=0}^{\infty,j\ne i-h}\phi^i\phi^j\mathrm{cov}(w_{t+h-i}, w_{t-j})}_{=0} + 
+\sum_{k=0}^\infty\phi^{k+h}\phi^k\mathrm{cov}(w_k, w_k)\\
+&amp;=\sigma_w^2 \sum_{i=0}^\infty \phi^{h+i}\phi^i \\
+&amp;=\sigma_w^2\phi^h\sum_{i=0}^\infty\phi^{2i} = \frac{\sigma_w^2\phi^h}{1-\phi^2}, \ h\ge 0.
+\end{align*}
+\]</span> 进而可以得到ACF的表达式如下 <span class="math display">\[
+\rho(h) = \frac{\gamma(h)}{\gamma(0)} = \phi^h, \ h\ge 0
+\]</span> 即<span class="math inline">\(\rho(h)\)</span>是关于<span class="math inline">\(h\)</span>的等比数列，<span class="math inline">\(\rho(h) = \phi\rho(h-1), h=1,2,...\)</span></p>
+<p>一个有趣的现象是，当<span class="math inline">\(-1 &lt; \phi &lt; 0\)</span>时，得到的时间序列<span class="math inline">\(\{x_t\}\)</span>中，相邻两项呈负相关，而隔了一项后的两项（<span class="math inline">\(x_t, x_{t-2}\)</span>）呈正相关。因而此时的时序图线会很曲折。</p>
 <ul>
-<li>当$|\phi| &lt; 1$时，由于<br>$$<br>\lim_{k\to\infty}\mathrm{E}\left(x_t-\sum_{j&#x3D;0}^{k-1}\phi^jw_{t-j}\right)^2 &#x3D; \lim_{k\to\infty}\phi^{2k}\mathrm{E}(x_{t-k}^2) &#x3D; 0<br>$$<br>故可以无限迭代上式，得到<br>$$<br>x_t &#x3D; \sum_{i&#x3D;0}^\infty \phi^i w_{t-i}<br>$$<br>均方收敛。其均值为<br>$$<br>\mu &#x3D; \mathrm{E}(x_t) &#x3D; \sum_{i&#x3D;0}^\infty \phi^i\mathrm{E}(w_{t-i}) &#x3D; 0<br>$$<br>自协方差为<br>$$<br>\begin{align*}<br>\gamma(h) &amp;&#x3D; \mathrm{cov}(x_{t+h}, x_t) &#x3D; \mathrm{cov}\left[\left(\sum_{i&#x3D;0}^\infty \phi^iw_{t+h-i}\right), \left(\sum_{j&#x3D;0}^\infty\phi^j w_{t-j}\right)\right] \<br>&amp;&#x3D; \underbrace{\sum_{i&#x3D;0}^{h-1}\sum_{j&#x3D;0}^\infty \phi^i \phi^j\mathrm{cov}(w_{t+h-i}, w_{t-j})}<em>{&#x3D;0} +<br>\underbrace{\sum</em>{i&#x3D;h}^\infty\sum_{j&#x3D;0}^{\infty,j\ne i-h}\phi^i\phi^j\mathrm{cov}(w_{t+h-i}, w_{t-j})}<em>{&#x3D;0} +<br>\sum</em>{k&#x3D;0}^\infty\phi^{k+h}\phi^k\mathrm{cov}(w_k, w_k)\<br>&amp;&#x3D;\sigma_w^2 \sum_{i&#x3D;0}^\infty \phi^{h+i}\phi^i \<br>&amp;&#x3D;\sigma_w^2\phi^h\sum_{i&#x3D;0}^\infty\phi^{2i} &#x3D; \frac{\sigma_w^2\phi^h}{1-\phi^2}, \ h\ge 0.<br>\end{align*}<br>$$<br>进而可以得到ACF的表达式如下<br>$$<br>\rho(h) &#x3D; \frac{\gamma(h)}{\gamma(0)} &#x3D; \phi^h, \ h\ge 0<br>$$<br>即$\rho(h)$是关于$h$的等比数列，$\rho(h) &#x3D; \phi\rho(h-1), h&#x3D;1,2,…$</li>
+<li>现在考虑<span class="math inline">\(|\phi| \ge 1\)</span>的情况（explosive case）</li>
 </ul>
-<p>一个有趣的现象是，当$-1 &lt; \phi &lt; 0$时，得到的时间序列${x_t}$中，相邻两项呈负相关，而隔了一项后的两项（$x_t, x_{t-2}$）呈正相关。因而此时的时序图线会很曲折。</p>
-<ul>
-<li>现在考虑$|\phi| \ge 1$的情况（explosive case）</li>
-</ul>
-<p>当$\phi &#x3D; 1$时，$x_t &#x3D; x_{t-1}+w_t$，退化成随机游走模型，<br>其自协方差为$\gamma_x(s, t) &#x3D; \mathrm{cov}(x_s, x_t) &#x3D; \min{s,t}\sigma_w^2$。因而该随机游走模型不稳定。</p>
-<p>当$|\phi| &gt; 1$时，有$|\phi|^j \to \infty$，因此$\sum_{j&#x3D;0}^{k-1} \phi^j w_{t-j}$在$k\to\infty$时均方不收敛，因而不能直接用前面的方式来进行后续推导。做变形如下，令$x_{t+1}&#x3D;\phi x_t+w_{t+1}$，则有<br>$$<br>\begin{align*}<br>x_t &amp;&#x3D; \phi^{-1}x_{t+1} - \phi^{-1}w_{t+1} &#x3D; \phi^{-1}(\phi^{-1}x_{t+2}-\phi^{-1}w_{t+2})-\phi^{-1}w_{t+1}\<br>&amp;&#x3D; … \<br>&amp;&#x3D; \phi^{-k}x_{t+k} - \sum_{j&#x3D;1}^{k-1}\phi^{-j}w_{t+j}<br>\end{align*}<br>$$<br>即向前迭代$k$步，由于$|\phi|^{-1} &lt; 1$，故该前向递推式仍然适用之前的推导，可得<br>$$<br>x_t &#x3D; -\sum_{j&#x3D;1}^\infty \phi^{-j}w_{t+j}<br>$$<br>同样可以证明该过程是稳定的。<br>当然，这个式子<strong>没有什么用</strong>，因为当前状态依赖于未来状态，故此情景下无法用该模型去预测未来的数据。当前状态不依赖于未来状态的时间序列被称为<strong>因果过程</strong>（causal process）。<br>根据上式计算自协方差得到：<br>$$<br>\begin{align*}<br>\gamma_x(h) &amp;&#x3D; \mathrm{cov}(x_{t+h}, x_t)<br>&#x3D; \mathrm{cov}\left(-\sum_{j&#x3D;1}^\infty\phi^{-j}w_{t+h+j}, -\sum_{k&#x3D;1}^\infty\phi^{-k}w_{t+k} \right)\<br>&amp;&#x3D;\frac{\sigma_w^2\phi^{-2}\phi^{-h}}{1-\phi^{-2}}<br>\end{align*}<br>$$<br>下面是有趣的地方了。定义下述因果过程<br>$$<br>y_t &#x3D; \phi^{-1}y_{t-1} + v_t<br>$$<br>其中$v_t\sim \mathrm{iid}\ \mathrm{N}(0, \sigma_w^2\phi^{-2})$为白噪声，则${y_t}$与${x_t}$随机等价（stochastically equal）。</p>
-<p>如果用自回归算子来表示AR(1)过程，则有<br>$$<br>\phi(B) x_t &#x3D; w_t,\ where\ \phi(B) &#x3D; 1-\phi B<br>$$<br>又从上文得到<br>$$<br>x_t &#x3D; \sum_{j&#x3D;0}^\infty \psi_j w_{t-j} &#x3D; \psi(B)w_t<br>$$<br>代入前式，于是有<br>$$<br>\phi(B)\psi(B) w_t &#x3D; w_t<br>$$<br>即<br>$$<br>\begin{align*}<br>&amp; (1-\phi B)(1+\psi_1 B + \psi_2 B^2 + … + \psi_j B^j + …) &#x3D; 1 \<br>\implies &amp;(1-\phi B)(1 + (\psi_1 - \phi)B + (\psi_2-\psi_1 \phi)B^2 + … + (\psi_j-\psi_{j-1}\phi)B^j + …) &#x3D; 1<br>\end{align*}<br>$$<br>于是有$\psi_j &#x3D; \psi_{j-1}\phi$，且$\psi_0&#x3D;1$，因此$\psi_j &#x3D; \phi^j$.<br>从多项式的角度看，可以定义$\phi(B)$的逆算子$\phi^{-1}(B)$，则有上面的推导可知<br>$$<br>\phi^{-1}(B) &#x3D; 1 + \phi B + \phi^2 B^2 + … + \phi^j B^j + … &#x3D; \frac{1}{1-\phi B}<br>$$<br>逆算子刚好符合多项式的性质。</p>
-<p>p.s. 浅补一下泛函分析相关概念：</p>
-<ul>
-<li>空间：集合+距离</li>
-<li>泛函：空间到数域的映射</li>
-<li>算子：空间到空间的映射<ul>
-<li>线性算子：满足线性性的算子，即$f(\alpha x + \beta y) &#x3D; \alpha f(x) + \beta f(y)$</li>
-<li>线性算子的多项式还是个线性算子</li>
-</ul>
-</li>
-</ul>
-<p>p.p.s. 随机过程相关概念</p>
-<ul>
-<li>均方收敛：</li>
-<li>随机等价：两个随机过程的有限分布都相同</li>
-</ul>
-<h2 id="MA模型"><a href="#MA模型" class="headerlink" title="MA模型"></a>MA模型</h2><p>MA模型假设观测数据由白噪声组成。下面是$q$阶移动平均（moving average）模型的定义，也可记为$\mathrm{MA}(q)$：<br>$$<br>x_t &#x3D; w_t + \theta_1 w_{t-1} + \theta_2 w_{t-2} + … + \theta_q w_{t-q}<br>$$<br>其中$w_t\sim wn(0, \sigma_w^2)$是白噪声项（误差项），$\theta_1, \theta_2, …, \theta_q(\theta_q \ne 0)$是参数。</p>
+<p>当<span class="math inline">\(\phi = 1\)</span>时，<span class="math inline">\(x_t = x_{t-1}+w_t\)</span>，退化成随机游走模型， 其自协方差为<span class="math inline">\(\gamma_x(s, t) = \mathrm{cov}(x_s, x_t) = \min\{s,t\}\sigma_w^2\)</span>。因而该随机游走模型不稳定。</p>
+<p>当<span class="math inline">\(|\phi| &gt; 1\)</span>时，有<span class="math inline">\(|\phi|^j \to \infty\)</span>，因此<span class="math inline">\(\sum_{j=0}^{k-1} \phi^j w_{t-j}\)</span>在<span class="math inline">\(k\to\infty\)</span>时均方不收敛，因而不能直接用前面的方式来进行后续推导。做变形如下，令<span class="math inline">\(x_{t+1}=\phi x_t+w_{t+1}\)</span>，则有 <span class="math display">\[
+\begin{align*}
+x_t &amp;= \phi^{-1}x_{t+1} - \phi^{-1}w_{t+1} = \phi^{-1}(\phi^{-1}x_{t+2}-\phi^{-1}w_{t+2})-\phi^{-1}w_{t+1}\\
+&amp;= ... \\
+&amp;= \phi^{-k}x_{t+k} - \sum_{j=1}^{k-1}\phi^{-j}w_{t+j}
+\end{align*}
+\]</span> 即向前迭代<span class="math inline">\(k\)</span>步，由于<span class="math inline">\(|\phi|^{-1} &lt; 1\)</span>，故该前向递推式仍然适用之前的推导，可得 <span class="math display">\[
+x_t = -\sum_{j=1}^\infty \phi^{-j}w_{t+j}
+\]</span> 同样可以证明该过程是稳定的。 当然，这个式子<strong>没有什么用</strong>，因为当前状态依赖于未来状态，故此情景下无法用该模型去预测未来的数据。当前状态不依赖于未来状态的时间序列被称为<strong>因果过程</strong>（causal process）。 根据上式计算自协方差得到： <span class="math display">\[
+\begin{align*}
+\gamma_x(h) &amp;= \mathrm{cov}(x_{t+h}, x_t) 
+= \mathrm{cov}\left(-\sum_{j=1}^\infty\phi^{-j}w_{t+h+j}, -\sum_{k=1}^\infty\phi^{-k}w_{t+k} \right)\\
+&amp;=\frac{\sigma_w^2\phi^{-2}\phi^{-h}}{1-\phi^{-2}}
+\end{align*}
+\]</span> 下面是有趣的地方了。定义下述因果过程 <span class="math display">\[
+y_t = \phi^{-1}y_{t-1} + v_t
+\]</span> 其中<span class="math inline">\(v_t\sim \mathrm{iid}\ \mathrm{N}(0, \sigma_w^2\phi^{-2})\)</span>为白噪声，则<span class="math inline">\(\{y_t\}\)</span>与<span class="math inline">\(\{x_t\}\)</span>随机等价（stochastically equal）。</p>
+<p>如果用自回归算子来表示AR(1)过程，则有 <span class="math display">\[
+\phi(B) x_t = w_t,\ where\ \phi(B) = 1-\phi B
+\]</span> 又从上文得到 <span class="math display">\[
+x_t = \sum_{j=0}^\infty \psi_j w_{t-j} = \psi(B)w_t
+\]</span> 代入前式，于是有 <span class="math display">\[
+\phi(B)\psi(B) w_t = w_t
+\]</span> 即 <span class="math display">\[
+\begin{align*}
+&amp; (1-\phi B)(1+\psi_1 B + \psi_2 B^2 + ... + \psi_j B^j + ...) = 1 \\
+\implies &amp;(1-\phi B)(1 + (\psi_1 - \phi)B + (\psi_2-\psi_1 \phi)B^2 + ... + (\psi_j-\psi_{j-1}\phi)B^j + ...) = 1
+\end{align*}
+\]</span> 于是有<span class="math inline">\(\psi_j = \psi_{j-1}\phi\)</span>，且<span class="math inline">\(\psi_0=1\)</span>，因此<span class="math inline">\(\psi_j = \phi^j\)</span>. 从多项式的角度看，可以定义<span class="math inline">\(\phi(B)\)</span>的逆算子<span class="math inline">\(\phi^{-1}(B)\)</span>，则有上面的推导可知 <span class="math display">\[
+\phi^{-1}(B) = 1 + \phi B + \phi^2 B^2 + ... + \phi^j B^j + ... = \frac{1}{1-\phi B}
+\]</span> 逆算子刚好符合多项式的性质。</p>
+<p>p.s. 浅补一下泛函分析相关概念： - 空间：集合+距离 - 泛函：空间到数域的映射 - 算子：空间到空间的映射 - 线性算子：满足线性性的算子，即<span class="math inline">\(f(\alpha x + \beta y) = \alpha f(x) + \beta f(y)\)</span> - 线性算子的多项式还是个线性算子</p>
+<p>p.p.s. 随机过程相关概念 - 均方收敛： - 随机等价：两个随机过程的有限分布都相同</p>
+<h2 id="ma模型">MA模型</h2>
+<p>MA模型假设观测数据由白噪声组成。下面是<span class="math inline">\(q\)</span>阶移动平均（moving average）模型的定义，也可记为<span class="math inline">\(\mathrm{MA}(q)\)</span>： <span class="math display">\[
+x_t = w_t + \theta_1 w_{t-1} + \theta_2 w_{t-2} + ... + \theta_q w_{t-q}
+\]</span> 其中<span class="math inline">\(w_t\sim wn(0, \sigma_w^2)\)</span>是白噪声项（误差项），<span class="math inline">\(\theta_1, \theta_2, ..., \theta_q(\theta_q \ne 0)\)</span>是参数。</p>
 <p>可以发现AR(1)模型就是一个有无限项的MA模型。</p>
-<p>定义移动平均算子（moving average operator）为<br>$$<br>\theta(B) &#x3D; 1 + \theta_1B + \theta_2 B^2 + … + \theta_q B^q<br>$$<br>则MA模型可重新写成$x_t &#x3D; \theta(B)w_t$.</p>
-<h3 id="MA-1-模型与可逆性（invertibility）"><a href="#MA-1-模型与可逆性（invertibility）" class="headerlink" title="MA(1)模型与可逆性（invertibility）"></a>MA(1)模型与可逆性（invertibility）</h3><h2 id="ARMA"><a href="#ARMA" class="headerlink" title="ARMA"></a>ARMA</h2><h2 id="ARIMA"><a href="#ARIMA" class="headerlink" title="ARIMA"></a>ARIMA</h2>
+<p>定义移动平均算子（moving average operator）为 <span class="math display">\[
+\theta(B) = 1 + \theta_1B + \theta_2 B^2 + ... + \theta_q B^q
+\]</span> 则MA模型可重新写成<span class="math inline">\(x_t = \theta(B)w_t\)</span>.</p>
+<h3 id="ma1模型与可逆性invertibility">MA(1)模型与可逆性（invertibility）</h3>
+<h2 id="arma">ARMA</h2>
+<h2 id="arima">ARIMA</h2>
+
 <div class="article-footer fs14">
     <section id="license">
       <div class="header"><span>许可协议</span></div>
@@ -231,18 +347,61 @@
 
 
 
-<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Bob Lytton</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.26.8">Stellar 1.26.8</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Bob Lytton</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建。 本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
-<div class='float-panel mobile-only blur' style='display:none'>
-  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E5%9B%9E%E5%BD%92%E5%92%8Ceda%E5%88%86%E6%9E%90%E6%8A%80%E5%B7%A7"><span class="toc-text">时序回归和EDA分析技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E5%9C%BA%E6%99%AF%E4%B8%8B%E7%9A%84%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90"><span class="toc-text">时序场景下的回归分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eda"><span class="toc-text">EDA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E6%BB%91%E5%8C%96smoothing%E6%88%96%E6%BB%A4%E6%B3%A2"><span class="toc-text">平滑化（smoothing）或滤波</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#arima%E6%A8%A1%E5%9E%8B"><span class="toc-text">ARIMA模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ar%E6%A8%A1%E5%9E%8B"><span class="toc-text">AR模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ar1%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%9B%A0%E6%9E%9C%E6%80%A7causality"><span class="toc-text">AR(1)模型与因果性（causality）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ma%E6%A8%A1%E5%9E%8B"><span class="toc-text">MA模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ma1%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%8F%AF%E9%80%86%E6%80%A7invertibility"><span class="toc-text">MA(1)模型与可逆性（invertibility）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arma"><span class="toc-text">ARMA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arima"><span class="toc-text">ARIMA</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
   </button>
 </div>
-<div class="main-mask" onclick="sidebar.toggle()"></div></div></div><div class="scripts">
+</div><div class="scripts">
 <script type="text/javascript">
-  const stellar = {
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
     // 懒加载 css https://github.com/filamentgroup/loadCSS
-    loadCSS: (href, before, media, attributes) => {
+    css: (href, before, media, attributes) => {
       var doc = window.document;
       var ss = doc.createElement("link");
       var ref;
@@ -300,11 +459,10 @@
       return ss;
     },
 
-    // 从 butterfly 和 volantis 获得灵感
-    loadScript: (src, opt) => new Promise((resolve, reject) => {
+    js: (src, opt) => new Promise((resolve, reject) => {
       var script = document.createElement('script');
       if (src.startsWith('/')){
-        src = stellar.config.root + src.substring(1);
+        src = ctx.root + src.substring(1);
       }
       script.src = src;
       if (opt) {
@@ -325,78 +483,249 @@
       document.head.appendChild(script)
     }),
 
-    // https://github.com/jerryc127/hexo-theme-butterfly
-    jQuery: (fn) => {
+    jq: (fn) => {
       if (typeof jQuery === 'undefined') {
-        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+        utils.js(deps.jquery).then(fn)
       } else {
         fn()
       }
-    }
-  };
-  stellar.version = '1.26.8';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.26.8';
-  stellar.config = {
-    date_suffix: {
-      just: '刚刚',
-      min: '分钟前',
-      hour: '小时前',
-      day: '天前',
-      month: '个月前',
     },
-    root : '/',
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
   };
+</script>
 
-  // required plugins (only load if needs)
-  stellar.plugins = {
-    jQuery: 'https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js'
-  };
-
-  if ('local_search') {
-    stellar.search = {};
-    stellar.search.service = 'local_search';
-    if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
-      stellar.search[stellar.search.service] = service_obj;
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
     }
-  }
-
-  // stellar js
-  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js","memos":"/js/plugins/memos.js","marked":"/js/plugins/marked.js"});
-
-  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
-  // optional plugins
-  if ('true' == 'true') {
-    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js","transition":"fade"});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@10.3/swiper-bundle.min.css","js":"https://unpkg.com/swiper@10.3/swiper-bundle.min.js"});
-  }
-  if ('' == 'true') {
-    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://cdn.bootcdn.net/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js","distance":"16px","duration":800,"interval":100,"scale":1});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","flying_pages":"https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js","css":"https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css","selector":null});
-  }
-  if ('false' == 'true') {
-    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied","toast":"复制成功"});
   }
 </script>
 
 <!-- required -->
-<script src="/js/main.js?v=1.26.8" async></script>
+<script src="/js/main.js?v=1.28.1" async></script>
 
 <!-- optional -->
 
 
 
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
 
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
 
 
 <!-- inject -->

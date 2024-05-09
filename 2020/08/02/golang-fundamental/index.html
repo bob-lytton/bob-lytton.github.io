@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.26.8" theme-name="Stellar" theme-version="1.26.8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1" theme-name="Stellar" theme-version="1.28.1">
   
   <meta name="generator" content="Hexo 7.1.1">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -14,17 +14,18 @@
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="theme-color" content="#f8f8f8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f9fafb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   
-  <title>Go语言入门 - 千里之行，始于足下</title>
+  <title>Go语言入门 - 随便玩玩</title>
 
   
-    <meta name="description" content="How to build 1. 安装go语言： 2. 配置与编译 2.1 配置 2.2 编译     Types 1. 主要类型 2. 类型声明 3. 接口   Array &amp; Slice &amp; Map 1. 数组(Array) 2. 切片(Slice) 3. 映射(Map)      &#x2F;&#x2F; Coming soon  Modules Control Adv">
+    <meta name="description" content="How to build  1. 安装go语言： 2. 配置与编译  2.1 配置 2.2 编译   Types  1. 主要类型 2. 类型声明 3. 接口  Array &amp; Slice &amp; Map  1. 数组(Array) 2. 切片(Slice) 3. 映射(Map)    &#x2F;&#x2F; Coming soon - Modules - Control - Advanced t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go语言入门">
 <meta property="og:url" content="http://bob-lytton.github.io/2020/08/02/golang-fundamental/index.html">
-<meta property="og:site_name" content="千里之行，始于足下">
-<meta property="og:description" content="How to build 1. 安装go语言： 2. 配置与编译 2.1 配置 2.2 编译     Types 1. 主要类型 2. 类型声明 3. 接口   Array &amp; Slice &amp; Map 1. 数组(Array) 2. 切片(Slice) 3. 映射(Map)      &#x2F;&#x2F; Coming soon  Modules Control Adv">
+<meta property="og:site_name" content="随便玩玩">
+<meta property="og:description" content="How to build  1. 安装go语言： 2. 配置与编译  2.1 配置 2.2 编译   Types  1. 主要类型 2. 类型声明 3. 接口  Array &amp; Slice &amp; Map  1. 数组(Array) 2. 切片(Slice) 3. 映射(Map)    &#x2F;&#x2F; Coming soon - Modules - Control - Advanced t">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-02T08:32:39.000Z">
 <meta property="article:modified_time" content="2024-02-11T09:50:01.594Z">
@@ -39,21 +40,20 @@
   <!-- feed -->
   
 
-  <link rel="stylesheet" href="/css/main.css?v=1.26.8">
+  <link rel="stylesheet" href="/css/main.css?v=1.28.1">
 
   
 
   
 
-  
   
 </head>
 <body>
 
-<div class="l_body content tech" id="start" layout="post" ><aside class="l_left"><div class="sidebar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">千里之行，始于足下</div></a></div></header>
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">随便玩玩</div><div class="sub cap">时间是朋友</div></a></div></header>
 
 <div class="nav-area">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
@@ -63,15 +63,8 @@
 </div>
 <div class="widgets">
 
-<widget class="widget-wrapper toc single" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-build"><span class="toc-text">How to build</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85go%E8%AF%AD%E8%A8%80%EF%BC%9A"><span class="toc-text">1. 安装go语言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%BC%96%E8%AF%91"><span class="toc-text">2. 配置与编译</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E9%85%8D%E7%BD%AE"><span class="toc-text">2.1 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E7%BC%96%E8%AF%91"><span class="toc-text">2.2 编译</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Types"><span class="toc-text">Types</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%BB%E8%A6%81%E7%B1%BB%E5%9E%8B"><span class="toc-text">1. 主要类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E"><span class="toc-text">2. 类型声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8E%A5%E5%8F%A3"><span class="toc-text">3. 接口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-Slice-Map"><span class="toc-text">Array &amp; Slice &amp; Map</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E7%BB%84-Array"><span class="toc-text">1. 数组(Array)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%87%E7%89%87-Slice"><span class="toc-text">2. 切片(Slice)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%98%A0%E5%B0%84-Map"><span class="toc-text">3. 映射(Map)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Functions"><span class="toc-text">Functions</span></a></li></ol></div></div></widget>
 
-
-
-
-
-
-
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/05/08/ARMA-Learning/"><span class="title">ARMA 学习笔记</span></a><a class="item title active" href="/2020/08/02/golang-fundamental/"><span class="title">Go语言入门</span><svg class="active-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11.098v4.993c0 3.096 0 4.645-.734 5.321c-.35.323-.792.526-1.263.58c-.987.113-2.14-.907-4.445-2.946c-1.02-.901-1.529-1.352-2.118-1.47a2.225 2.225 0 0 0-.88 0c-.59.118-1.099.569-2.118 1.47c-2.305 2.039-3.458 3.059-4.445 2.945a2.238 2.238 0 0 1-1.263-.579C3 20.736 3 19.188 3 16.091v-4.994C3 6.81 3 4.666 4.318 3.333C5.636 2 7.758 2 12 2c4.243 0 6.364 0 7.682 1.332C21 4.665 21 6.81 21 11.098" opacity=".5"/><path fill="currentColor" d="M9 5.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5z"/></svg></a><a class="item title" href="/2024/02/11/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2020/08/02/intern-daily/"><span class="title">每日心得</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/05/08/ARMA-Learning/"><span class="title">ARMA 学习笔记</span></a><a class="item title" href="/2020/08/02/golang-fundamental/"><span class="title">Go语言入门</span></a><a class="item title" href="/2024/02/11/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2020/08/02/intern-daily/"><span class="title">每日心得</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -82,132 +75,85 @@
 
 <div class="article banner top">
   <div class="content">
-    
-<div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Golang/">Golang</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2020-08-02T08:32:39.000Z">2020-08-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-02-11T09:50:01.594Z">2024-02-11</time></span></div></div>
-</div>
-
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2020-08-02T08:32:39.000Z">2020-08-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-02-11T09:50:01.594Z">2024-02-11</time></span></div></div></div>
     
-    <div class="bottom">
+    <div class="bottom only-title">
+      
       <div class="text-area">
         <h1 class="text title"><span>Go语言入门</span></h1>
+        
       </div>
     </div>
     
   </div>
   </div><article class="md-text content"><!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
 <ul>
-<li><a href="#how-to-build">How to build</a><ul>
+<li><a href="#how-to-build">How to build</a>
+<ul>
 <li><a href="#1-%E5%AE%89%E8%A3%85go%E8%AF%AD%E8%A8%80">1. 安装go语言：</a></li>
-<li><a href="#2-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%BC%96%E8%AF%91">2. 配置与编译</a><ul>
+<li><a href="#2-%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%BC%96%E8%AF%91">2. 配置与编译</a>
+<ul>
 <li><a href="#21-%E9%85%8D%E7%BD%AE">2.1 配置</a></li>
 <li><a href="#22-%E7%BC%96%E8%AF%91">2.2 编译</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#types">Types</a><ul>
+</ul></li>
+</ul></li>
+<li><a href="#types">Types</a>
+<ul>
 <li><a href="#1-%E4%B8%BB%E8%A6%81%E7%B1%BB%E5%9E%8B">1. 主要类型</a></li>
 <li><a href="#2-%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E">2. 类型声明</a></li>
 <li><a href="#3-%E6%8E%A5%E5%8F%A3">3. 接口</a></li>
-</ul>
-</li>
-<li><a href="#array--slice--map">Array &amp; Slice &amp; Map</a><ul>
+</ul></li>
+<li><a href="#array--slice--map">Array &amp; Slice &amp; Map</a>
+<ul>
 <li><a href="#1-%E6%95%B0%E7%BB%84array">1. 数组(Array)</a></li>
 <li><a href="#2-%E5%88%87%E7%89%87slice">2. 切片(Slice)</a></li>
 <li><a href="#3-%E6%98%A0%E5%B0%84map">3. 映射(Map)</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-<p>&#x2F;&#x2F; Coming soon</p>
+<p>// Coming soon - Modules - Control - Advanced topics 这里是一些纲要性的内容，有些有趣的话题另外有博客专门讨论。 内容如果有错，欢迎提issue指正。 （正在不断更新中......） <span id="more"></span></p>
+<h2 id="how-to-build">How to build</h2>
+<h3 id="安装go语言">1. 安装go语言：</h3>
+<p>去官网下载go语言，然后按照上面的步骤安装即可</p>
+<h3 id="配置与编译">2. 配置与编译</h3>
+<h4 id="配置">2.1 配置</h4>
+<p>Go语言的几个重要的环境变量：GOPATH、GOROOT - GOPATH：go语言拉取依赖的下载路径，GOPATH下应该有3个文件夹：bin, pkg, src - GOROOT：一般为go语言的安装路径</p>
+<h4 id="编译">2.2 编译</h4>
 <ul>
-<li>Modules</li>
-<li>Control</li>
-<li>Advanced topics<br>这里是一些纲要性的内容，有些有趣的话题另外有博客专门讨论。<br>内容如果有错，欢迎提issue指正。<br>（正在不断更新中……）<span id="more"></span></li>
-</ul>
-<h2 id="How-to-build"><a href="#How-to-build" class="headerlink" title="How to build"></a>How to build</h2><h3 id="1-安装go语言："><a href="#1-安装go语言：" class="headerlink" title="1. 安装go语言："></a>1. 安装go语言：</h3><p>去官网下载go语言，然后按照上面的步骤安装即可</p>
-<h3 id="2-配置与编译"><a href="#2-配置与编译" class="headerlink" title="2. 配置与编译"></a>2. 配置与编译</h3><h4 id="2-1-配置"><a href="#2-1-配置" class="headerlink" title="2.1 配置"></a>2.1 配置</h4><p>Go语言的几个重要的环境变量：GOPATH、GOROOT</p>
-<ul>
-<li>GOPATH：go语言拉取依赖的下载路径，GOPATH下应该有3个文件夹：bin, pkg, src</li>
-<li>GOROOT：一般为go语言的安装路径</li>
-</ul>
-<h4 id="2-2-编译"><a href="#2-2-编译" class="headerlink" title="2.2 编译"></a>2.2 编译</h4><ul>
 <li>如果是要运行单个go代码，可以运行<code>go run &lt;filename.go&gt;</code></li>
 <li>如果要编译一个用go写的项目，在项目的根目录下运行<code>go build</code>即可</li>
 </ul>
-<h2 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h2><h3 id="1-主要类型"><a href="#1-主要类型" class="headerlink" title="1. 主要类型"></a>1. 主要类型</h3><p>Go语言的主要类型有</p>
+<h2 id="types">Types</h2>
+<h3 id="主要类型">1. 主要类型</h3>
+<p>Go语言的主要类型有 - int - int8 - int16 - int32 - int64 - float - float16 - float32 - float64 - complex - byte - string 此外每种type都有对应的指针类型</p>
+<p>Go语言支持结构体(struct)、接口(interface)与自定义类型 自定义类型可以与原生类型一样，但是允许定义方法(method，一种需要类型实例调用的函数)，而原生类型无法自定义方法 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="type">int</span> MyType</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m MyType)</span></span> myfunc()</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>int<ul>
-<li>int8</li>
-<li>int16</li>
-<li>int32</li>
-<li>int64</li>
+<li><p>零值(Zero value) Go语言为每个类型都规定了一个零值，在提到类型的时候，就不得不提每个类型的零值是什么。<code>int</code>类的零值就是<span class="math inline">\(0\)</span>，float类的零值为<span class="math inline">\(0.0\)</span>，string类的零值为<code>""</code>，此外所有的指针、以及结构体等复杂一点的类型的零值为<code>nil</code>。</p></li>
+<li><p>强制类型转换 使用类型名加括号，就像调用函数一样。例： <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a := <span class="number">12</span>       <span class="comment">// a is an int or int32</span></span><br><span class="line">b := <span class="type">int64</span>(a) <span class="comment">// b is an int64</span></span><br></pre></td></tr></table></figure></p></li>
 </ul>
-</li>
-<li>float<ul>
-<li>float16</li>
-<li>float32</li>
-<li>float64</li>
-</ul>
-</li>
-<li>complex</li>
-<li>byte</li>
-<li>string<br>此外每种type都有对应的指针类型</li>
-</ul>
-<p>Go语言支持结构体(struct)、接口(interface)与自定义类型<br>自定义类型可以与原生类型一样，但是允许定义方法(method，一种需要类型实例调用的函数)，而原生类型无法自定义方法</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="type">int</span> MyType</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m MyType)</span></span> myfunc()</span><br></pre></td></tr></table></figure>
-
+<h3 id="类型声明">2. 类型声明</h3>
 <ul>
-<li><p>零值(Zero value)<br>Go语言为每个类型都规定了一个零值，在提到类型的时候，就不得不提每个类型的零值是什么。<code>int</code>类的零值就是$0$，float类的零值为$0.0$，string类的零值为<code>&quot;&quot;</code>，此外所有的指针、以及结构体等复杂一点的类型的零值为<code>nil</code>。</p>
-</li>
-<li><p>强制类型转换<br>使用类型名加括号，就像调用函数一样。例：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a := <span class="number">12</span>       <span class="comment">// a is an int or int32</span></span><br><span class="line">b := <span class="type">int64</span>(a) <span class="comment">// b is an int64</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Go语言中的变量有两种声明方式 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a <span class="type">string</span></span><br><span class="line">b := <span class="string">&quot;this is a string&quot;</span></span><br></pre></td></tr></table></figure> 上述变量<code>a</code>和<code>b</code>都是string，其中<code>:=</code>称为隐式声明，仅当这个变量名在这个作用域下第一次出现时需要，其变量类型是由所赋的值所决定的。当然如果是<code>int</code>的话，会默认为<code>int</code>（即<code>int32</code>），而如果要使用<code>int64</code>则需要强转。</p></li>
+<li><p>Go的类型声明遵循<code>var var_name type</code>的顺序，可以看做是后缀表达式（而C风格的类型声明相当于中缀表达式）。 后缀表达式的好处是在函数与指针嵌套定义的时候非常清晰。例如 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Myfunc</span><span class="params">(<span class="keyword">func</span>(<span class="type">int</span>, <span class="type">string</span>)</span></span> []*<span class="type">byte</span>, <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">func</span>(<span class="type">int</span>)</span></span>, <span class="type">string</span>) <span class="function"><span class="keyword">func</span><span class="params">()</span></span>) *<span class="function"><span class="keyword">func</span><span class="params">(<span class="type">int</span>)</span></span> <span class="type">error</span></span><br></pre></td></tr></table></figure></p></li>
 </ul>
-<h3 id="2-类型声明"><a href="#2-类型声明" class="headerlink" title="2. 类型声明"></a>2. 类型声明</h3><ul>
-<li><p>Go语言中的变量有两种声明方式</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a <span class="type">string</span></span><br><span class="line">b := <span class="string">&quot;this is a string&quot;</span></span><br></pre></td></tr></table></figure>
-<p>上述变量<code>a</code>和<code>b</code>都是string，其中<code>:=</code>称为隐式声明，仅当这个变量名在这个作用域下第一次出现时需要，其变量类型是由所赋的值所决定的。当然如果是<code>int</code>的话，会默认为<code>int</code>（即<code>int32</code>），而如果要使用<code>int64</code>则需要强转。</p>
-</li>
-<li><p>Go的类型声明遵循<code>var var_name type</code>的顺序，可以看做是后缀表达式（而C风格的类型声明相当于中缀表达式）。<br>后缀表达式的好处是在函数与指针嵌套定义的时候非常清晰。例如</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Myfunc</span><span class="params">(<span class="keyword">func</span>(<span class="type">int</span>, <span class="type">string</span>)</span></span> []*<span class="type">byte</span>, <span class="function"><span class="keyword">func</span><span class="params">(<span class="keyword">func</span>(<span class="type">int</span>)</span></span>, <span class="type">string</span>) <span class="function"><span class="keyword">func</span><span class="params">()</span></span>) *<span class="function"><span class="keyword">func</span><span class="params">(<span class="type">int</span>)</span></span> <span class="type">error</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="3-接口"><a href="#3-接口" class="headerlink" title="3. 接口"></a>3. 接口</h3><p>Go语言中的接口(interface)也是一种类型，它定义了一系列方法，实现了这些方法的任何类型都等价于实现了这个接口，而不用显式声明。例如</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fmt/pring.go</span></span><br><span class="line"><span class="keyword">type</span> State <span class="keyword">interface</span> &#123;</span><br><span class="line">    Write(b []<span class="type">byte</span>) (n <span class="type">int</span>, err <span class="type">error</span>)</span><br><span class="line">    Width() (wid <span class="type">int</span>, ok <span class="type">bool</span>)</span><br><span class="line">    Precision() (prec <span class="type">int</span>, ok <span class="type">bool</span>)</span><br><span class="line">    Flag(c <span class="type">int</span>) <span class="type">bool</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是如果想要让一个类型实现一个接口，就必须实现这个接口里的所有方法</p>
-<h2 id="Array-Slice-Map"><a href="#Array-Slice-Map" class="headerlink" title="Array &amp; Slice &amp; Map"></a>Array &amp; Slice &amp; Map</h2><h3 id="1-数组-Array"><a href="#1-数组-Array" class="headerlink" title="1. 数组(Array)"></a>1. 数组(Array)</h3><p>Go语言中的数组是固定长度的，在声明的时候就要确定好。例如</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = [<span class="number">5</span>]<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>数组在Go语言中直接使用的场景不多，更多的是作为切片(slice)的隐含实现。切片在Go语言编程中十分普遍。</p>
-<h3 id="2-切片-Slice"><a href="#2-切片-Slice" class="headerlink" title="2. 切片(Slice)"></a>2. 切片(Slice)</h3><p>(参考：<a target="_blank" rel="noopener" href="https://blog.golang.org/slices-intro">Go Slices: usage and internals</a>)</p>
-<p>Slice可以通过对array进行切片操作得到，也可以对直接声明与初始化。<br>每个slice都是对一个underlying array的引用。因此修改了underlying array就会修改所有引用其中元素的slice。<br>切片是可变长度的，并且支持append, slice操作，十分灵活。</p>
+<h3 id="接口">3. 接口</h3>
+<p>Go语言中的接口(interface)也是一种类型，它定义了一系列方法，实现了这些方法的任何类型都等价于实现了这个接口，而不用显式声明。例如 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fmt/pring.go</span></span><br><span class="line"><span class="keyword">type</span> State <span class="keyword">interface</span> &#123;</span><br><span class="line">    Write(b []<span class="type">byte</span>) (n <span class="type">int</span>, err <span class="type">error</span>)</span><br><span class="line">    Width() (wid <span class="type">int</span>, ok <span class="type">bool</span>)</span><br><span class="line">    Precision() (prec <span class="type">int</span>, ok <span class="type">bool</span>)</span><br><span class="line">    Flag(c <span class="type">int</span>) <span class="type">bool</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 但是如果想要让一个类型实现一个接口，就必须实现这个接口里的所有方法</p>
+<h2 id="array-slice-map">Array &amp; Slice &amp; Map</h2>
+<h3 id="数组array">1. 数组(Array)</h3>
+<p>Go语言中的数组是固定长度的，在声明的时候就要确定好。例如 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = [<span class="number">5</span>]<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure> 数组在Go语言中直接使用的场景不多，更多的是作为切片(slice)的隐含实现。切片在Go语言编程中十分普遍。</p>
+<h3 id="切片slice">2. 切片(Slice)</h3>
+<p>(参考：<a target="_blank" rel="noopener" href="https://blog.golang.org/slices-intro">Go Slices: usage and internals</a>)</p>
+<p>Slice可以通过对array进行切片操作得到，也可以对直接声明与初始化。 每个slice都是对一个underlying array的引用。因此修改了underlying array就会修改所有引用其中元素的slice。 切片是可变长度的，并且支持append, slice操作，十分灵活。 - 初始化： 有两种初始化方式，第一种是直接指定值，第二种是使用<code>make</code>函数来初始化。注意在使用<code>make</code>初始化时，元素会被初始化成对应类型的零值。 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = []<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;  <span class="comment">// p = &#123;1,2,3,4,5&#125;</span></span><br><span class="line">q := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">5</span>)       <span class="comment">// q = &#123;0,0,0,0,0&#125;</span></span><br></pre></td></tr></table></figure> - 切片操作： slice有长度(length)和容量(capacity)两个属性，分别可以调用<code>len(p)</code>和<code>cap(p)</code>来查看。 Go语言中array可以进行切片，切片得到的是一个slice；slice也可以继续切片，仍然得到slice类型的实例。例如 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = []<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;</span><br><span class="line">q := p[<span class="number">2</span>:<span class="number">4</span>]   <span class="comment">// q = &#123;3,4&#125;，不包含下标为4的元素</span></span><br></pre></td></tr></table></figure> 注意切片是对underlying array的引用，切片的切片也是对同一个underlying array的引用，因此改变切片时会改变underlying array，可能改变其他切片。例如 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">p := [<span class="number">7</span>]<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>&#125;</span><br><span class="line">q := p[<span class="number">2</span>:<span class="number">7</span>]   <span class="comment">// now q = &#123;3,4,5,6,7&#125;</span></span><br><span class="line">r := p[<span class="number">1</span>:<span class="number">5</span>]   <span class="comment">// now r = &#123;2,3,4,5&#125;</span></span><br><span class="line">s := q[<span class="number">1</span>:<span class="number">4</span>]   <span class="comment">// now s = &#123;4,5,6&#125;</span></span><br><span class="line">r[<span class="number">2</span>] = <span class="number">10</span></span><br><span class="line"><span class="comment">// now q = &#123;3,10,5,6,7&#125;</span></span><br><span class="line"><span class="comment">// now r = &#123;2,3,10,5&#125;</span></span><br><span class="line"><span class="comment">// now s = &#123;10,5,6&#125;</span></span><br><span class="line"><span class="comment">// now p = &#123;1,2,3,10,5,6,7&#125;</span></span><br></pre></td></tr></table></figure> - append操作： 类似于python的<code>list.append</code>和C++ STL里的<code>vector&lt;T&gt;::push_back</code>，追加元素在指定的slice后面 Go语言中的追加元素很有意思，如果有两个不同的slice是从同一个slice那里追加不同的元素得到的，则append会为这两个slice各分配一个新的underlying array，并且与上一个slice也不同 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">p := [<span class="number">3</span>]<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">s := <span class="built_in">append</span>(p[:], <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)  <span class="comment">// append方法可以追加一列元素，按照参数顺序追加，append只能对切片操作</span></span><br><span class="line"><span class="comment">// s = &#123;1,2,3,4,5,6&#125;</span></span><br><span class="line">s = <span class="built_in">append</span>(s, <span class="number">7</span>)       <span class="comment">// s = &#123;1,2,3,4,5,6,7&#125;</span></span><br><span class="line">r := <span class="built_in">append</span>(s, <span class="number">7</span>)      <span class="comment">// r = &#123;1,2,3,4,5,6,7,7&#125;</span></span><br><span class="line">r[<span class="number">1</span>] = <span class="number">10</span>              </span><br><span class="line"><span class="comment">// now r = &#123;1,10,3,4,6,7,7&#125;, </span></span><br><span class="line"><span class="comment">// s = &#123;1,10,3,4,5,6,7&#125;, </span></span><br><span class="line"><span class="comment">// p = &#123;1,2,3&#125;，</span></span><br><span class="line"><span class="comment">// 这里r与s是同一个underlying array的引用</span></span><br></pre></td></tr></table></figure> <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">p := [<span class="number">3</span>]<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">s := <span class="built_in">append</span>(p[:], <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)</span><br><span class="line">r := <span class="built_in">append</span>(s, <span class="number">7</span>)</span><br><span class="line">a := <span class="built_in">append</span>(s, <span class="number">8</span>)</span><br><span class="line">r[<span class="number">1</span>] = <span class="number">10</span></span><br><span class="line"><span class="comment">// now r = &#123;1,10,3,4,5,6,7&#125;, </span></span><br><span class="line"><span class="comment">// a = &#123;1,2,3,4,5,6,8&#125;, </span></span><br><span class="line"><span class="comment">// s = &#123;1,2,3,4,5,6&#125;，</span></span><br><span class="line"><span class="comment">// 可以看到只改变了r</span></span><br></pre></td></tr></table></figure> - 比较：slice只能喝<code>nil</code>进行比较，即判断一个slice是否为空 - (问题：如何查看和比较两个slice的underlying array？)</p>
+<h3 id="映射map">3. 映射(Map)</h3>
+<p>Map，即存储键值对的结构。Go语言中的map也是采用散列来存储和索引键，类似于python中的<code>dict</code>。例： <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m := <span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span></span><br></pre></td></tr></table></figure> 其中方括号内为键的类型，之后紧跟的是值的类型。Map的零值是<code>nil</code>。</p>
+<p>Map支持插入(insert)、获取(retrieve)和删除(delete)等操作。 - 插入： <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m[key] = elem</span><br></pre></td></tr></table></figure> - 获取： <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">elem = m[key]</span><br></pre></td></tr></table></figure> - 删除： <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">delete</span>(m, key)</span><br></pre></td></tr></table></figure> - 此外map还可以测试key是否存在，只要在查找时用两个变量来接收返回值即可，后一个是bool类型 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">elem, ok := m[key]</span><br></pre></td></tr></table></figure> 当<code>ok = true</code>时，说明key存在；否则key不在<code>m</code>中，此时<code>elem</code>为map对应值类型的零值。</p>
+<h2 id="functions">Functions</h2>
 <ul>
-<li>初始化：<br>有两种初始化方式，第一种是直接指定值，第二种是使用<code>make</code>函数来初始化。注意在使用<code>make</code>初始化时，元素会被初始化成对应类型的零值。<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = []<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;  <span class="comment">// p = &#123;1,2,3,4,5&#125;</span></span><br><span class="line">q := <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">5</span>)       <span class="comment">// q = &#123;0,0,0,0,0&#125;</span></span><br></pre></td></tr></table></figure></li>
-<li>切片操作：<br>slice有长度(length)和容量(capacity)两个属性，分别可以调用<code>len(p)</code>和<code>cap(p)</code>来查看。<br>Go语言中array可以进行切片，切片得到的是一个slice；slice也可以继续切片，仍然得到slice类型的实例。例如<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = []<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;</span><br><span class="line">q := p[<span class="number">2</span>:<span class="number">4</span>]   <span class="comment">// q = &#123;3,4&#125;，不包含下标为4的元素</span></span><br></pre></td></tr></table></figure>
-注意切片是对underlying array的引用，切片的切片也是对同一个underlying array的引用，因此改变切片时会改变underlying array，可能改变其他切片。例如<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">p := [<span class="number">7</span>]<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>&#125;</span><br><span class="line">q := p[<span class="number">2</span>:<span class="number">7</span>]   <span class="comment">// now q = &#123;3,4,5,6,7&#125;</span></span><br><span class="line">r := p[<span class="number">1</span>:<span class="number">5</span>]   <span class="comment">// now r = &#123;2,3,4,5&#125;</span></span><br><span class="line">s := q[<span class="number">1</span>:<span class="number">4</span>]   <span class="comment">// now s = &#123;4,5,6&#125;</span></span><br><span class="line">r[<span class="number">2</span>] = <span class="number">10</span></span><br><span class="line"><span class="comment">// now q = &#123;3,10,5,6,7&#125;</span></span><br><span class="line"><span class="comment">// now r = &#123;2,3,10,5&#125;</span></span><br><span class="line"><span class="comment">// now s = &#123;10,5,6&#125;</span></span><br><span class="line"><span class="comment">// now p = &#123;1,2,3,10,5,6,7&#125;</span></span><br></pre></td></tr></table></figure></li>
-<li>append操作：<br>类似于python的<code>list.append</code>和C++ STL里的<code>vector&lt;T&gt;::push_back</code>，追加元素在指定的slice后面<br>Go语言中的追加元素很有意思，如果有两个不同的slice是从同一个slice那里追加不同的元素得到的，则append会为这两个slice各分配一个新的underlying array，并且与上一个slice也不同<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">p := [<span class="number">3</span>]<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">s := <span class="built_in">append</span>(p[:], <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)  <span class="comment">// append方法可以追加一列元素，按照参数顺序追加，append只能对切片操作</span></span><br><span class="line"><span class="comment">// s = &#123;1,2,3,4,5,6&#125;</span></span><br><span class="line">s = <span class="built_in">append</span>(s, <span class="number">7</span>)       <span class="comment">// s = &#123;1,2,3,4,5,6,7&#125;</span></span><br><span class="line">r := <span class="built_in">append</span>(s, <span class="number">7</span>)      <span class="comment">// r = &#123;1,2,3,4,5,6,7,7&#125;</span></span><br><span class="line">r[<span class="number">1</span>] = <span class="number">10</span>              </span><br><span class="line"><span class="comment">// now r = &#123;1,10,3,4,6,7,7&#125;, </span></span><br><span class="line"><span class="comment">// s = &#123;1,10,3,4,5,6,7&#125;, </span></span><br><span class="line"><span class="comment">// p = &#123;1,2,3&#125;，</span></span><br><span class="line"><span class="comment">// 这里r与s是同一个underlying array的引用</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">p := [<span class="number">3</span>]<span class="type">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">s := <span class="built_in">append</span>(p[:], <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>)</span><br><span class="line">r := <span class="built_in">append</span>(s, <span class="number">7</span>)</span><br><span class="line">a := <span class="built_in">append</span>(s, <span class="number">8</span>)</span><br><span class="line">r[<span class="number">1</span>] = <span class="number">10</span></span><br><span class="line"><span class="comment">// now r = &#123;1,10,3,4,5,6,7&#125;, </span></span><br><span class="line"><span class="comment">// a = &#123;1,2,3,4,5,6,8&#125;, </span></span><br><span class="line"><span class="comment">// s = &#123;1,2,3,4,5,6&#125;，</span></span><br><span class="line"><span class="comment">// 可以看到只改变了r</span></span><br></pre></td></tr></table></figure></li>
-<li>比较：slice只能喝<code>nil</code>进行比较，即判断一个slice是否为空</li>
-<li>(问题：如何查看和比较两个slice的underlying array？)</li>
-</ul>
-<h3 id="3-映射-Map"><a href="#3-映射-Map" class="headerlink" title="3. 映射(Map)"></a>3. 映射(Map)</h3><p>Map，即存储键值对的结构。Go语言中的map也是采用散列来存储和索引键，类似于python中的<code>dict</code>。例：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m := <span class="keyword">map</span>[<span class="type">string</span>]<span class="type">int</span></span><br></pre></td></tr></table></figure>
-<p>其中方括号内为键的类型，之后紧跟的是值的类型。Map的零值是<code>nil</code>。</p>
-<p>Map支持插入(insert)、获取(retrieve)和删除(delete)等操作。</p>
-<ul>
-<li>插入：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">m[key] = elem</span><br></pre></td></tr></table></figure></li>
-<li>获取：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">elem = m[key]</span><br></pre></td></tr></table></figure></li>
-<li>删除：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">delete</span>(m, key)</span><br></pre></td></tr></table></figure></li>
-<li>此外map还可以测试key是否存在，只要在查找时用两个变量来接收返回值即可，后一个是bool类型<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">elem, ok := m[key]</span><br></pre></td></tr></table></figure>
-当<code>ok = true</code>时，说明key存在；否则key不在<code>m</code>中，此时<code>elem</code>为map对应值类型的零值。</li>
-</ul>
-<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><ul>
 <li>函数也可以被当作value传给其他操作</li>
-<li>Go语言支持内嵌函数(closure)，例如：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">adder</span><span class="params">()</span></span> <span class="function"><span class="keyword">func</span><span class="params">(<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    sum := <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(x <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">        sum += x</span><br><span class="line">        <span class="keyword">return</span> sum</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-实现了一个加法器（相当于python里的一个实现了<code>__call__</code>方法的加法类）</li>
+<li>Go语言支持内嵌函数(closure)，例如： <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">adder</span><span class="params">()</span></span> <span class="function"><span class="keyword">func</span><span class="params">(<span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    sum := <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">func</span><span class="params">(x <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">        sum += x</span><br><span class="line">        <span class="keyword">return</span> sum</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 实现了一个加法器（相当于python里的一个实现了<code>__call__</code>方法的加法类）</li>
 </ul>
 
 <div class="article-footer fs14">
@@ -225,18 +171,61 @@
 
 
 
-<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Bob Lytton</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.26.8">Stellar 1.26.8</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">Bob Lytton</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.28.1">Stellar 1.28.1</a> 主题创建。 本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
-<div class='float-panel mobile-only blur' style='display:none'>
-  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#how-to-build"><span class="toc-text">How to build</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85go%E8%AF%AD%E8%A8%80"><span class="toc-text">1. 安装go语言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%BC%96%E8%AF%91"><span class="toc-text">2. 配置与编译</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">2.1 配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-text">2.2 编译</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#types"><span class="toc-text">Types</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%B1%BB%E5%9E%8B"><span class="toc-text">1. 主要类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E"><span class="toc-text">2. 类型声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-text">3. 接口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#array-slice-map"><span class="toc-text">Array &amp; Slice &amp; Map</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84array"><span class="toc-text">1. 数组(Array)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E7%89%87slice"><span class="toc-text">2. 切片(Slice)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84map"><span class="toc-text">3. 映射(Map)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#functions"><span class="toc-text">Functions</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
   </button>
 </div>
-<div class="main-mask" onclick="sidebar.toggle()"></div></div></div><div class="scripts">
+</div><div class="scripts">
 <script type="text/javascript">
-  const stellar = {
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
     // 懒加载 css https://github.com/filamentgroup/loadCSS
-    loadCSS: (href, before, media, attributes) => {
+    css: (href, before, media, attributes) => {
       var doc = window.document;
       var ss = doc.createElement("link");
       var ref;
@@ -294,11 +283,10 @@
       return ss;
     },
 
-    // 从 butterfly 和 volantis 获得灵感
-    loadScript: (src, opt) => new Promise((resolve, reject) => {
+    js: (src, opt) => new Promise((resolve, reject) => {
       var script = document.createElement('script');
       if (src.startsWith('/')){
-        src = stellar.config.root + src.substring(1);
+        src = ctx.root + src.substring(1);
       }
       script.src = src;
       if (opt) {
@@ -319,78 +307,249 @@
       document.head.appendChild(script)
     }),
 
-    // https://github.com/jerryc127/hexo-theme-butterfly
-    jQuery: (fn) => {
+    jq: (fn) => {
       if (typeof jQuery === 'undefined') {
-        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+        utils.js(deps.jquery).then(fn)
       } else {
         fn()
       }
-    }
-  };
-  stellar.version = '1.26.8';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.26.8';
-  stellar.config = {
-    date_suffix: {
-      just: '刚刚',
-      min: '分钟前',
-      hour: '小时前',
-      day: '天前',
-      month: '个月前',
     },
-    root : '/',
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
   };
+</script>
 
-  // required plugins (only load if needs)
-  stellar.plugins = {
-    jQuery: 'https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js'
-  };
-
-  if ('local_search') {
-    stellar.search = {};
-    stellar.search.service = 'local_search';
-    if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
-      stellar.search[stellar.search.service] = service_obj;
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
     }
-  }
-
-  // stellar js
-  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js","memos":"/js/plugins/memos.js","marked":"/js/plugins/marked.js"});
-
-  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
-  // optional plugins
-  if ('true' == 'true') {
-    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js","transition":"fade"});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@10.3/swiper-bundle.min.css","js":"https://unpkg.com/swiper@10.3/swiper-bundle.min.js"});
-  }
-  if ('' == 'true') {
-    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://cdn.bootcdn.net/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js","distance":"16px","duration":800,"interval":100,"scale":1});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","flying_pages":"https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js","css":"https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css","selector":null});
-  }
-  if ('false' == 'true') {
-    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
-  }
-  if ('true' == 'true') {
-    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied","toast":"复制成功"});
   }
 </script>
 
 <!-- required -->
-<script src="/js/main.js?v=1.26.8" async></script>
+<script src="/js/main.js?v=1.28.1" async></script>
 
 <!-- optional -->
 
 
 
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
 
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
 
 
 <!-- inject -->
