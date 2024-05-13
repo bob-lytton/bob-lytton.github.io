@@ -28,7 +28,7 @@
 <meta property="og:description" content="参考书：Time Series Analysis and Its Applications, 4-th Edition  基础概念 时间序列：一组随机变量按照时间顺序下标得到的序列，被称为时间序列 be defined as a collection of random variables indexed according to the order they are obtained in t">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-08T15:35:15.000Z">
-<meta property="article:modified_time" content="2024-05-13T09:10:37.349Z">
+<meta property="article:modified_time" content="2024-05-13T09:13:38.816Z">
 <meta property="article:author" content="Bob Lytton">
 <meta property="article:tag" content="Time Series">
 <meta property="article:tag" content="Machine Learning">
@@ -78,7 +78,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-08T15:35:15.000Z">2024-05-08</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-13T09:10:37.349Z">2024-05-13</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-05-08T15:35:15.000Z">2024-05-08</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-05-13T09:13:38.816Z">2024-05-13</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -474,7 +474,7 @@ x_t = \sum_{j=0}^\infty\psi_j w_{t-j}
 \]</span> 特性是ACF在间隔大于<span class="math inline">\(q\)</span>的时候为0，并且在间隔等于<span class="math inline">\(q\)</span>的时候不为0. 因此ACF为MA模型的依赖性提供了足够信息。因此在处理AR模型和ARMA模型时，人们想到设计一种函数能有像MA模型下的ACF一样的特性，这就是偏自相关函数（partial autocorrelation function, PACF）。</p>
 <p>首先假设有随机变量<span class="math inline">\(X,Y,Z\)</span>，则<span class="math inline">\(X,Y\)</span>关于<span class="math inline">\(Z\)</span>的偏相关系数<span class="math inline">\(\rho_{XY|Z} = \mathrm{corr}\{X-\hat{X}, Y-\hat Y\}\)</span>，其中<span class="math inline">\(\hat X\)</span>是将<span class="math inline">\(X\)</span>在<span class="math inline">\(Z\)</span>上做回归得到的预测值。即<span class="math inline">\(X-\hat X\)</span>是回归的<strong>残差</strong>。</p>
 <p>在时间序列分析中，上述motivation变成了在衡量两个时间点取值的自相关性时，要去掉两者之间所有取值的影响。</p>
-<p><strong>定义</strong>：一个稳定过程<span class="math inline">\(x_t\)</span>的自相关函数，记为<span class="math inline">\(\phi_{hh},\ h=1,2,...\)</span>，其定义为 <span class="math display">\[
+<p><strong>定义</strong>：一个稳定过程<span class="math inline">\(x_t\)</span>的偏自相关函数（PACF），记为<span class="math inline">\(\phi_{hh},\ h=1,2,...\)</span>，其定义为 <span class="math display">\[
 \phi_{11} = \mathrm{corr}(x_{t+1}, x_t) = \rho(1)\\
 \phi_{hh} = \mathrm{corr}(x_{t+h}-\hat{x}_{t+h}, x_t - \hat{x}_t),\ h\ge 2
 \]</span> 其中<span class="math inline">\(\hat x_{t+h}\)</span>表示<span class="math inline">\(x_{t+h}\)</span>在<span class="math inline">\(\{x_{t+h-1},x_{t+h-2},...,x_{t+1}\}\)</span>上的回归值（这里的回归指的是它们的多元线性回归，即使得均方误差最小的线性组合），而<span class="math inline">\(\hat x_t\)</span>则表示<span class="math inline">\(x_t\)</span>在<span class="math inline">\(\{x_{t+h-1},x_{t+h-2},...,x_{t+1}\}\)</span>上的回归（注意还是夹在<span class="math inline">\(x_t\)</span>和<span class="math inline">\(x_{t+h}\)</span>之间的值）。</p>
@@ -483,9 +483,11 @@ x_t = \sum_{j=0}^\infty\psi_j w_{t-j}
 \]</span> 则由<span class="math inline">\(x_t\)</span>序列的稳定性（这里主要用到<span class="math inline">\(\gamma(-h) = \gamma(h)\)</span>）可以推出 <span class="math display">\[
 \hat x_t = \beta_1 x_{t+1} + \beta_2 x_{t+2} + \cdots + \beta_{h-1}x_{t+h-1} = \sum_{j=1}^{h-1}\beta_j x_{t+j}
 \]</span></p>
-<details class="tag-plugin colorful folding" ><summary><span>p.s. 以AR(1)的PACF为例</span></summary><div class="body"><p>计算<span class="math inline">\(\phi_{22}\)</span>，考虑<span class="math inline">\(x_{t+2}\)</span>和<span class="math inline">\(x_t\)</span>分别在<span class="math inline">\(x_{t+1}\)</span>上的线性回归，求各自的回归系数。 假设<span class="math inline">\(x_{t+2}=\beta x_{t+1}\)</span>，则需要最小化均方误差 <span class="math display">\[\begin{align*}\mathrm{E}(x_{t+2}-\beta x_{t+1})^2 &amp;=\mathrm{E}(x_{t+2})^2 - 2\beta\mathrm{E}(x_{t+2}x_{t+1}) + \beta^2\mathrm{E}(x_{t+1})^2\\&amp;=\gamma(0)-2\beta\gamma(1)+\beta^2\gamma(0)\end{align*}\]</span> 假设<span class="math inline">\(x_t = \beta^* x_{t+1}\)</span>，需要最小化均方误差，同样有 <span class="math display">\[\begin{align*}\mathrm{E}(x_t - \beta^* x_{t+1})^2 &amp;=\mathrm{E}(x_t)^2 - 2\beta^*\mathrm{E}(x_tx_{t+1}) + {\beta^*}^2\mathrm{E}(x_{t+1})^2\\&amp;=\gamma(0) - 2\beta^*\gamma(-1) + {\beta^*}^2\gamma(0)\\&amp;=\gamma(0) - 2\beta^*\gamma(1) + {\beta^*}^2\gamma(0)\end{align*}\]</span> 因此可以发现两个均方误差是相同的方程。</p></div></details>
+<details class="tag-plugin colorful folding" ><summary><span>p.s. 以AR(1)的PACF为例</span></summary><div class="body"><p>计算<span class="math inline">\(\phi_{22}\)</span>，考虑<span class="math inline">\(x_{t+2}\)</span>和<span class="math inline">\(x_t\)</span>分别在<span class="math inline">\(x_{t+1}\)</span>上的线性回归，求各自的回归系数。 假设<span class="math inline">\(x_{t+2}=\beta x_{t+1}\)</span>，则需要最小化均方误差 <span class="math display">\[\begin{align*}\mathrm{E}(x_{t+2}-\beta x_{t+1})^2 &amp;=\mathrm{E}(x_{t+2})^2 - 2\beta\mathrm{E}(x_{t+2}x_{t+1}) + \beta^2\mathrm{E}(x_{t+1})^2\\&amp;=\gamma(0)-2\beta\gamma(1)+\beta^2\gamma(0)\end{align*}\]</span> 假设<span class="math inline">\(x_t = \beta^* x_{t+1}\)</span>，需要最小化均方误差，同样有 <span class="math display">\[\begin{align*}\mathrm{E}(x_t - \beta^* x_{t+1})^2 &amp;=\mathrm{E}(x_t)^2 - 2\beta^*\mathrm{E}(x_tx_{t+1}) + {\beta^*}^2\mathrm{E}(x_{t+1})^2\\&amp;=\gamma(0) - 2\beta^*\gamma(-1) + {\beta^*}^2\gamma(0)\\&amp;=\gamma(0) - 2\beta^*\gamma(1) + {\beta^*}^2\gamma(0)\end{align*}\]</span> 因此可以发现两个均方误差是相同的方程，从而回归系数解出来也是相同的。</p></div></details>
 <h3 id="特性">特性</h3>
-<p>TL；DR <!-- TODO: 插入截图 --> 拖尾（tails off） 截尾（cuts off）</p>
+<p>TL；DR <!-- TODO: 插入截图 --></p>
+<p>拖尾（tails off）</p>
+<p>截尾（cuts off）</p>
 <h2 id="模型预测">模型预测</h2>
 <h2 id="arima">ARIMA</h2>
 
